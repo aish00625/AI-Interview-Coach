@@ -1,0 +1,52 @@
+[
+ {
+  "input": "4 8\n3 6 7 11\n",
+  "expected_output": "4",
+  "is_hidden": false
+ },
+ {
+  "input": "5 5\n30 11 23 4 20\n",
+  "expected_output": "30",
+  "is_hidden": false
+ },
+ {
+  "input": "1 1\n1\n",
+  "expected_output": "1",
+  "is_hidden": false
+ },
+ {
+  "input": "1 10\n100\n",
+  "expected_output": "10",
+  "is_hidden": true
+ },
+ {
+  "input": "3 3\n5 5 5\n",
+  "expected_output": "5",
+  "is_hidden": true
+ },
+ {
+  "input": "3 9\n5 5 5\n",
+  "expected_output": "2",
+  "is_hidden": true
+ },
+ {
+  "input": "3 6\n10 10 10\n",
+  "expected_output": "5",
+  "is_hidden": true
+ },
+ {
+  "input": "4 4\n2000 1 1 1\n",
+  "expected_output": "2000",
+  "is_hidden": true
+ },
+ {
+  "input": "5 6\n30 11 23 4 20\n",
+  "expected_output": "23",
+  "is_hidden": true
+ },
+ {
+  "input": "6 10\n12 28 6 10 17 18\n",
+  "expected_output": "12",
+  "is_hidden": true
+ }
+]

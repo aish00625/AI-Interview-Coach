@@ -1,0 +1,25 @@
+{
+  "slug": "remove-nth-from-end",
+  "title": "Remove N-th Node From End of List",
+  "topic": "Linked Lists",
+  "difficulty": "medium",
+  "description": "Given a singly linked list, remove its k-th node counted from the end (the last node is the 1st from the end) and print the resulting list.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: the n node values in order.\n\nOutput format\nThe remaining values on one line separated by single spaces, or the word EMPTY if no nodes remain.",
+  "constraints": "1 <= k <= n <= 100000.",
+  "hints": [
+    "Removing the k-th from the end is the same as removing the (n-k+1)-th from the start, but pretend you do not know n.",
+    "Use two pointers: move the first pointer k steps ahead, then move both together until the first reaches the end. The second pointer is then just before the node to delete.",
+    "A dummy node placed before the head makes removing the first node a normal case instead of a special one."
+  ],
+  "examples": [
+    {
+      "input": "5 2\n1 2 3 4 5\n",
+      "output": "1 2 3 5",
+      "explanation": "The 2nd node from the end is 4."
+    },
+    {
+      "input": "1 1\n9\n",
+      "output": "EMPTY",
+      "explanation": "Removing the only node leaves an empty list."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "group-anagrams",
+  "title": "Group Anagrams",
+  "topic": "Hashing",
+  "difficulty": "medium",
+  "description": "Group words that are anagrams of each other.\n\nInput format\nLine 1: n, the number of words.\nNext n lines: one lowercase word per line.\n\nOutput format\nOne line per group. Inside a group, the words are sorted alphabetically (duplicates kept) and separated by single spaces. The groups themselves are ordered alphabetically by their first word.",
+  "constraints": "1 <= n <= 1000. Each word has 1 to 50 lowercase letters.",
+  "hints": [
+    "What do all anagrams of one word have in common that you can compute for any word?",
+    "Sort the letters of each word to get a key; words with the same key belong together. A dictionary from key to list of words does the grouping.",
+    "Sort the words inside each group and then sort the groups by their first word, as the output format requires."
+  ],
+  "examples": [
+    {
+      "input": "6\neat\ntea\ntan\nate\nnat\nbat\n",
+      "output": "ate eat tea\nbat\nnat tan",
+      "explanation": "eat/tea/ate share the letters a, e, t; tan/nat share a, n, t; bat is alone."
+    },
+    {
+      "input": "2\na\nb\n",
+      "output": "a\nb",
+      "explanation": "Different letters, so two groups."
+    }
+  ]
+}

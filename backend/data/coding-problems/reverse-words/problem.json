@@ -1,0 +1,25 @@
+{
+  "slug": "reverse-words",
+  "title": "Reverse the Word Order",
+  "topic": "Strings",
+  "difficulty": "easy",
+  "description": "A line of text contains words separated by one or more spaces, and may start or end with spaces. Print the words in reverse order, separated by exactly one space, with no leading or trailing spaces. The letters inside each word keep their original order.\n\nInput format\nOne line of text.\n\nOutput format\nThe words in reverse order, joined by single spaces.",
+  "constraints": "The line contains at least one word. Words contain letters and digits only. The line is at most 100000 characters long.",
+  "hints": [
+    "First separate the line into words; repeated spaces should not create empty words.",
+    "Most languages can split on any run of whitespace and ignore empty pieces. Then you only need to read the list backwards.",
+    "Split into words, reverse the list, and join with one space. Do not reverse the characters of each word."
+  ],
+  "examples": [
+    {
+      "input": "the quick brown fox\n",
+      "output": "fox brown quick the",
+      "explanation": "Four words, printed last to first."
+    },
+    {
+      "input": "  hello   world  \n",
+      "output": "world hello",
+      "explanation": "Extra spaces are dropped; only the word order changes."
+    }
+  ]
+}

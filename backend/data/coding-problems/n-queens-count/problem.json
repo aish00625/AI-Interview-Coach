@@ -1,0 +1,25 @@
+{
+  "slug": "n-queens-count",
+  "title": "N-Queens: Count Solutions",
+  "topic": "Recursion",
+  "difficulty": "hard",
+  "description": "Place n queens on an n x n chess board so that no two queens attack each other (no two share a row, column or diagonal). Count how many different placements exist.\n\nInput format\nLine 1: n.\n\nOutput format\nOne integer: the number of valid placements.",
+  "constraints": "1 <= n <= 9.",
+  "hints": [
+    "Each row must contain exactly one queen, so decide the column of the queen row by row.",
+    "Use backtracking: for the current row try every column that is not already attacked, place a queen, recurse to the next row, then undo the placement.",
+    "Track attacked columns and both diagonals in sets (or bitmasks): column c, diagonal row-c and anti-diagonal row+c identify the lines a queen attacks."
+  ],
+  "examples": [
+    {
+      "input": "4\n",
+      "output": "2",
+      "explanation": "For a 4 x 4 board there are exactly two arrangements."
+    },
+    {
+      "input": "1\n",
+      "output": "1",
+      "explanation": "One queen on a 1 x 1 board."
+    }
+  ]
+}

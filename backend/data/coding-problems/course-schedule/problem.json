@@ -1,0 +1,25 @@
+{
+  "slug": "course-schedule",
+  "title": "Course Schedule",
+  "topic": "Graphs",
+  "difficulty": "medium",
+  "description": "There are n courses numbered 0 to n-1. Some courses have prerequisites: a pair \"a b\" means you must finish course b before taking course a. Decide whether it is possible to finish all courses.\n\nInput format\nLine 1: n and m separated by a space.\nNext m lines: two integers a and b (a prerequisite pair).\n\nOutput format\nYES if all courses can be finished, otherwise NO.",
+  "constraints": "1 <= n <= 10000. 0 <= m <= 50000. 0 <= a, b < n.",
+  "hints": [
+    "Draw each prerequisite as an arrow from b to a. When is it impossible to order the courses?",
+    "It is impossible exactly when the directed graph contains a cycle. Detect cycles with a depth-first search or with a topological sort.",
+    "Kahn's algorithm: compute in-degrees, repeatedly take a course with in-degree 0, and decrease the in-degree of the courses that depend on it. If you can take all n courses the answer is YES. Cycles can involve more than two courses."
+  ],
+  "examples": [
+    {
+      "input": "2 1\n1 0\n",
+      "output": "YES",
+      "explanation": "Take course 0, then course 1."
+    },
+    {
+      "input": "2 2\n1 0\n0 1\n",
+      "output": "NO",
+      "explanation": "Each course requires the other, so a cycle exists."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "trapping-rain-water",
+  "title": "Trapping Rain Water",
+  "topic": "Arrays",
+  "difficulty": "hard",
+  "description": "An elevation map is given as n non-negative integers, each the height of a bar of width 1. After it rains, water collects between the bars. Compute how many units of water are trapped in total.\n\nInput format\nLine 1: n.\nLine 2: n non-negative integers (the heights, left to right).\n\nOutput format\nOne integer: the total units of trapped water.",
+  "constraints": "1 <= n <= 100000. 0 <= height <= 100000.",
+  "hints": [
+    "Think about a single bar. How high can the water above it get, and what decides that?",
+    "The water above bar i is min(tallest bar to its left, tallest bar to its right) - height[i], if that is positive. Computing both maxima for every bar gives an O(n) answer with two helper arrays.",
+    "You can save memory with two pointers moving inward: always advance the side whose current maximum is smaller, because that side is limited by its own maximum."
+  ],
+  "examples": [
+    {
+      "input": "12\n0 1 0 2 1 0 1 3 2 1 2 1\n",
+      "output": "6",
+      "explanation": "Water collects in the dips between the taller bars; the total is 6 units."
+    },
+    {
+      "input": "6\n4 2 0 3 2 5\n",
+      "output": "9",
+      "explanation": "The bars 4 and 5 hold 9 units between them."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "sliding-window-maximum",
+  "title": "Sliding Window Maximum",
+  "topic": "Queue",
+  "difficulty": "hard",
+  "description": "A window of size k slides from the left end of an array to the right end, one position at a time. Report the maximum value inside the window at every position.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: n integers.\n\nOutput format\nn-k+1 integers on one line, separated by single spaces: the maximum of each window from left to right.",
+  "constraints": "1 <= k <= n <= 100000. Values fit in a 32-bit signed integer.",
+  "hints": [
+    "Recomputing the maximum of each window from scratch takes O(n*k). What information from the previous window can you reuse?",
+    "Keep a double-ended queue of indices whose values are in decreasing order. The front is always the index of the current maximum.",
+    "For each new element: pop indices from the back while their value is <= the new value, push the new index, and pop the front if it has left the window (index <= i-k). The front is the answer once i >= k-1."
+  ],
+  "examples": [
+    {
+      "input": "8 3\n1 3 -1 -3 5 3 6 7\n",
+      "output": "3 3 5 5 6 7",
+      "explanation": "Windows: [1 3 -1]->3, [3 -1 -3]->3, [-1 -3 5]->5, [-3 5 3]->5, [5 3 6]->6, [3 6 7]->7."
+    },
+    {
+      "input": "1 1\n1\n",
+      "output": "1",
+      "explanation": "A single window containing a single value."
+    }
+  ]
+}

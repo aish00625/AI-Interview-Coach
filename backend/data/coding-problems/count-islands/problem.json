@@ -1,0 +1,25 @@
+{
+  "slug": "count-islands",
+  "title": "Count the Islands",
+  "topic": "Graphs",
+  "difficulty": "medium",
+  "description": "A map is a grid of cells, each either land (1) or water (0). Two land cells belong to the same island when you can walk from one to the other moving only up, down, left or right through land cells. Diagonal neighbours are not connected.\n\nPrint the number of islands.\n\nInput format\nLine 1: R and C, the number of rows and columns.\nNext R lines: each a string of exactly C characters, each 0 or 1.\n\nOutput format\nOne integer: the number of islands.",
+  "constraints": "1 <= R, C <= 500.",
+  "hints": [
+    "Each island is a group of connected land cells. How could you visit every cell of a group once?",
+    "Scan the grid. Whenever you find land you have not visited, you have found a new island: count it, then flood out from that cell and mark every connected land cell as visited.",
+    "Flood with a queue or an explicit stack (breadth-first or depth-first search) rather than deep recursion, since an island can contain 250000 cells. Visit only the four orthogonal neighbours."
+  ],
+  "examples": [
+    {
+      "input": "4 5\n11000\n11000\n00100\n00011\n",
+      "output": "3",
+      "explanation": "Islands: the top-left 2x2 block, the single cell in row 3, and the pair at the bottom right."
+    },
+    {
+      "input": "2 2\n10\n01\n",
+      "output": "2",
+      "explanation": "The two land cells touch only diagonally, so they are separate islands."
+    }
+  ]
+}

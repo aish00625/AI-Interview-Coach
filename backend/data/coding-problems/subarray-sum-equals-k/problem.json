@@ -1,0 +1,25 @@
+{
+  "slug": "subarray-sum-equals-k",
+  "title": "Subarray Sum Equals K",
+  "topic": "Hashing",
+  "difficulty": "medium",
+  "description": "Count the contiguous subarrays whose elements add up to exactly k. The array can contain negative numbers and zeros.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: n integers.\n\nOutput format\nOne integer: the number of contiguous subarrays with sum k.",
+  "constraints": "1 <= n <= 100000. -1000 <= a[i] <= 1000. -1000000000 <= k <= 1000000000.",
+  "hints": [
+    "A subarray sum can be written as the difference of two prefix sums. Which pairs of prefix sums differ by k?",
+    "While scanning, keep a dictionary of how many times each prefix sum has appeared so far. For the current prefix sum P, add count[P - k] to the answer.",
+    "Start the dictionary with {0: 1} so subarrays beginning at index 0 are counted. A sliding window does not work because negative numbers break its monotonic behaviour."
+  ],
+  "examples": [
+    {
+      "input": "3 2\n1 1 1\n",
+      "output": "2",
+      "explanation": "The subarrays [1,1] at positions 0-1 and 1-2 both sum to 2."
+    },
+    {
+      "input": "5 0\n1 -1 0 1 -1\n",
+      "output": "7",
+      "explanation": "Seven subarrays add up to 0, for example [1,-1], [0] and [-1,0,1]."
+    }
+  ]
+}

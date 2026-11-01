@@ -1,0 +1,57 @@
+[
+ {
+  "input": "aabc\n",
+  "expected_output": "a#bb",
+  "is_hidden": false
+ },
+ {
+  "input": "abcabc\n",
+  "expected_output": "aaabc#",
+  "is_hidden": false
+ },
+ {
+  "input": "a\n",
+  "expected_output": "a",
+  "is_hidden": false
+ },
+ {
+  "input": "aa\n",
+  "expected_output": "a#",
+  "is_hidden": true
+ },
+ {
+  "input": "ab\n",
+  "expected_output": "aa",
+  "is_hidden": true
+ },
+ {
+  "input": "abab\n",
+  "expected_output": "aab#",
+  "is_hidden": true
+ },
+ {
+  "input": "zzzzy\n",
+  "expected_output": "z###y",
+  "is_hidden": true
+ },
+ {
+  "input": "abcdabcd\n",
+  "expected_output": "aaaabcd#",
+  "is_hidden": true
+ },
+ {
+  "input": "aabbccdd\n",
+  "expected_output": "a#b#c#d#",
+  "is_hidden": true
+ },
+ {
+  "input": "accbbcbbbcbbacbbcbcbbcabbcdadbacdaacdabb\n",
+  "expected_output": "aaaaaaaaaaaa##############dd############",
+  "is_hidden": true
+ },
+ {
+  "input": "abcdefghijklmiadeaggkjjchihemlgjhbadmjlcdicfifimidcdamehkhfigbafmijcjdhlbmdiidbblllhgbhdajmhmkmdkjkalebgjcfakcbmhaiealfiaclifkalcmjgdlfdbakjbaemmblhghcacgcedggbdhdjlkdgildgdecmfldealggahjbihdeijhcacfkdamggabmlmhllmaiefjjmkcmcbgdgckceeaeibijmdgckbfdalfghdceifgeflaghigajdkbgfebhgkbjglkhgjimjidhbbcmefebijfhmbfgimaabgibhbjmcjkmebebcklgahkkijhikfdafbhedfhdfmjlidilmeclmchelffdficcfclkbcijbklmciaclafjceacimjdamdmdiajieledkjcledbeegldceihceaakbklkaifdfejcgfdmdcllkadajgjjkgkffgkemialbaeecifkcbelhlkbbahijcjmifccdlmkgbldgdcgefifiaifdelfgmhhmfmmglakbdkmleicdbckhfdekhifeddjejemkfiihhkfdedmbidaejjaelhgjchkjakbbadakdcilgzclhdcgdmmlhmiffefcbkmjgemiceajjjfagimbflckgkefimlikikjcmafjhehljehkhbkafdfadbffcldbiligkkkhjiebmcebfagiijckjlggafhaeefaiehmfkdgmllfimiigbkagifgjlgkikgadfbjlhkamgckgjddiliajfmalbmaadgielhaddhdahihhhmhchkdbkcblcdjkfadmkfhajmiihakmfbkdhbhmgclmfhbjhklgdbhlffhjkhjhaimgcllgddcbhggglidhjfdjmimkeafkbkhlgagaeleggckggihjgmgjjahefdamhcegibiighdelceikfdjgcmkkchiklfmmbklkjfdejkhccdlkghcadefgggefiggilgljikgmlefkeigblmcedjacmmfljfhbgdfeifmgmgidgihcdaamehmaiamhiifaggkmmhcdcjhkilfmgieajcldihaagecfaekdlflifaggdfiekageeccccchbeedkgcmiclcbfbgamlkchhefaaecgmcglkgfgeagcgecllgdeigidalcikakcfmjelklaemlgkkahfijlcagmddfmgkbfhagjcclbedlfbjhkbkjagecblggdmmdblhfgaafghjfhjkmijcdeklemhikllhifildacfehcmecllhfbkajmbkflabibahdbgkafkbabdidlhgihbebdlbejiikdgkeighdhjkgjdgfhaaalmjjbfegcfgcjfkaebimdjibagegjeedmkjfhcgaihekffgeljgbemiijmbjdicegbhjekkcciclklfkkgaellcdkahelfjfbkflcmegelcmejdmdggchiefhjifgiljhcdfbkhekkfaldbjfahdchhcjlimjmhffdmjkbidllfmmikbcmjbkmbidbehccjjekhggdfcagflkdmdghibkchjfebgkgchjeflmahbgfcahaickalhdaakgfjaefdhamgligcedblcdibcemmleiaaglhkicegmmlaibmceidkgaehkflbcikkcadjgcdefgfdcaajehdlfgdmhfkiajkihfdaaebkgegjmmdimacbdgeadagmimllacdbafimibklgieeldlmjebbeiacbdcddkcgkbggejeffbjfbmbbgmjfaheimkijhhighmijafmabfmgmemibhkglmbmbkfbmhaggdliddhmfeihlckdmagfeefjmcmeadigmheilkibhaffckdacjgbmblegdmkejakjfmgbceigejhfgegjgdmjkjmcfjhaaikmejmelckglahfkmeddlljkjjafmbnopqrstuvwxy\n",
+  "expected_output": "aaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbffffffffff##########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+  "is_hidden": true
+ }
+]

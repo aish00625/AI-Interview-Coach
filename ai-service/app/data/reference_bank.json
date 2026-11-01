@@ -1,0 +1,3425 @@
+{
+  "version": 1,
+  "notes": "Evaluation criteria for every question in backend/services/interviewQuestionService.js. kind=concept: technical key-term coverage. kind=star: behavioural STAR structure cues. kind=criteria: HR-answer qualities. Terms are matched case-insensitively on word boundaries. This is keyword/cue matching, not understanding: see evaluator.py for how confidence is reported.",
+  "entries": [
+    {
+      "id": "oop_principles",
+      "kind": "concept",
+      "questions": [
+        "What are the four main principles of Object-Oriented Programming?"
+      ],
+      "match_keywords": [
+        "object-oriented",
+        "object oriented",
+        "oop",
+        "principles"
+      ],
+      "criteria": [
+        {
+          "name": "encapsulation",
+          "terms": [
+            "encapsulation",
+            "encapsulate",
+            "data hiding",
+            "information hiding"
+          ],
+          "followup": "How would you use encapsulation to stop other code from corrupting an object's data?"
+        },
+        {
+          "name": "inheritance",
+          "terms": [
+            "inheritance",
+            "inherit",
+            "inherits",
+            "subclass",
+            "base class",
+            "parent class"
+          ],
+          "followup": "Give an example where inheritance helps, and one where composition would be better."
+        },
+        {
+          "name": "polymorphism",
+          "terms": [
+            "polymorphism",
+            "polymorphic",
+            "many forms",
+            "overriding",
+            "overloading"
+          ],
+          "followup": "What is the difference between compile-time and run-time polymorphism?"
+        },
+        {
+          "name": "abstraction",
+          "terms": [
+            "abstraction",
+            "abstract",
+            "hides implementation",
+            "hide implementation",
+            "hiding implementation"
+          ],
+          "followup": "How does an abstract class or interface hide implementation details?"
+        }
+      ],
+      "model_answer": "Object-Oriented Programming is based on four main principles: encapsulation, inheritance, polymorphism, and abstraction. Encapsulation bundles data and methods together and controls access. Inheritance allows a class to reuse properties and behavior from another class. Polymorphism allows the same interface to behave differently for different objects. Abstraction hides implementation details and exposes essential functionality."
+    },
+    {
+      "id": "oop_overload_override",
+      "kind": "concept",
+      "questions": [
+        "Explain the difference between method overloading and method overriding."
+      ],
+      "match_keywords": [
+        "overloading",
+        "overriding"
+      ],
+      "criteria": [
+        {
+          "name": "overloading: same name, different parameters",
+          "terms": [
+            "different parameters",
+            "different signature",
+            "different arguments",
+            "different number of parameters",
+            "different types of parameters",
+            "parameter list"
+          ],
+          "followup": "Can two methods differ only by return type and still be overloads? Why or why not?"
+        },
+        {
+          "name": "overriding: subclass redefines a parent method",
+          "terms": [
+            "subclass",
+            "child class",
+            "derived class",
+            "parent class",
+            "base class",
+            "superclass",
+            "inheritance"
+          ],
+          "followup": "What rules must an overriding method follow about its signature?"
+        },
+        {
+          "name": "compile-time (static) resolution",
+          "terms": [
+            "compile time",
+            "compile-time",
+            "static binding",
+            "static polymorphism",
+            "early binding"
+          ],
+          "followup": "When does the compiler decide which overloaded method to call?"
+        },
+        {
+          "name": "run-time (dynamic) resolution",
+          "terms": [
+            "run time",
+            "runtime",
+            "run-time",
+            "dynamic binding",
+            "dynamic dispatch",
+            "dynamic polymorphism",
+            "late binding"
+          ],
+          "followup": "How does the program decide which overridden method to run?"
+        },
+        {
+          "name": "same signature when overriding",
+          "terms": [
+            "same signature",
+            "same name and",
+            "same method signature",
+            "same parameters",
+            "same method name"
+          ]
+        }
+      ],
+      "model_answer": "Overloading means several methods in the same class share a name but differ in their parameter lists; the compiler chooses one at compile time (static polymorphism). Overriding means a subclass provides its own implementation of a method it inherits, with the same signature; which version runs is decided at run time based on the actual object (dynamic polymorphism)."
+    },
+    {
+      "id": "dbms_normalization",
+      "kind": "concept",
+      "questions": [
+        "What is database normalization and why is it used?"
+      ],
+      "match_keywords": [
+        "normalization",
+        "database"
+      ],
+      "criteria": [
+        {
+          "name": "reduces redundancy",
+          "terms": [
+            "redundancy",
+            "redundant",
+            "duplicate data",
+            "duplication",
+            "repeated data"
+          ],
+          "followup": "Show how one table with repeated customer details would be split."
+        },
+        {
+          "name": "avoids anomalies",
+          "terms": [
+            "anomaly",
+            "anomalies",
+            "update anomaly",
+            "insert anomaly",
+            "delete anomaly"
+          ],
+          "followup": "Give an example of an update anomaly."
+        },
+        {
+          "name": "functional dependency",
+          "terms": [
+            "functional dependency",
+            "functional dependencies",
+            "dependency",
+            "dependencies"
+          ],
+          "followup": "What does it mean that A functionally determines B?"
+        },
+        {
+          "name": "normal forms",
+          "terms": [
+            "normal form",
+            "normal forms",
+            "1nf",
+            "2nf",
+            "3nf",
+            "bcnf",
+            "first normal",
+            "second normal",
+            "third normal"
+          ],
+          "followup": "What does Third Normal Form require beyond Second?"
+        },
+        {
+          "name": "splitting tables / data integrity",
+          "terms": [
+            "split",
+            "decompose",
+            "separate tables",
+            "integrity",
+            "consistency",
+            "consistent"
+          ]
+        }
+      ],
+      "model_answer": "Database normalization is the process of organizing data to reduce redundancy and avoid update, insert, and delete anomalies. It works by identifying functional dependencies between columns and splitting tables according to a series of normal forms (1NF, 2NF, 3NF, and beyond), each removing a specific kind of redundancy."
+    },
+    {
+      "id": "pk_vs_fk",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between a primary key and a foreign key?"
+      ],
+      "match_keywords": [
+        "primary key",
+        "foreign key"
+      ],
+      "criteria": [
+        {
+          "name": "primary key uniquely identifies a row",
+          "terms": [
+            "uniquely identif",
+            "unique identifier",
+            "uniquely identifies",
+            "unique",
+            "identifies each row",
+            "identifies each record"
+          ],
+          "followup": "Can a table have more than one primary key? What about a composite key?"
+        },
+        {
+          "name": "primary key cannot be null; one per table",
+          "terms": [
+            "not null",
+            "cannot be null",
+            "can't be null",
+            "no null",
+            "only one primary key",
+            "one primary key",
+            "single primary key",
+            "cannot be empty"
+          ]
+        },
+        {
+          "name": "foreign key references another table's key",
+          "terms": [
+            "references",
+            "refers to",
+            "reference to",
+            "links to",
+            "another table",
+            "other table",
+            "different table",
+            "parent table"
+          ],
+          "followup": "What happens if you delete a row that another table's foreign key points to?"
+        },
+        {
+          "name": "referential integrity",
+          "terms": [
+            "referential integrity",
+            "integrity",
+            "relationship",
+            "relationships",
+            "link between tables",
+            "relate tables",
+            "join"
+          ],
+          "followup": "What does referential integrity guarantee?"
+        },
+        {
+          "name": "foreign key may repeat / be null",
+          "terms": [
+            "duplicate",
+            "duplicates",
+            "can be null",
+            "can repeat",
+            "multiple rows",
+            "many rows",
+            "nullable"
+          ]
+        }
+      ],
+      "model_answer": "A primary key uniquely identifies each row in its own table; it must be unique and not null, and a table has only one. A foreign key is a column (or columns) in one table that references the primary key of another table, which creates a relationship between the tables and lets the database enforce referential integrity. Unlike a primary key, a foreign key may contain duplicates and, if allowed, nulls."
+    },
+    {
+      "id": "process_vs_thread",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between a process and a thread?"
+      ],
+      "match_keywords": [
+        "process",
+        "thread"
+      ],
+      "criteria": [
+        {
+          "name": "process: independent program with own memory",
+          "terms": [
+            "own memory",
+            "separate memory",
+            "memory space",
+            "address space",
+            "independent",
+            "isolated"
+          ],
+          "followup": "What does a process have its own copy of that threads do not?"
+        },
+        {
+          "name": "thread: lightweight unit inside a process",
+          "terms": [
+            "lightweight",
+            "light-weight",
+            "within a process",
+            "inside a process",
+            "part of a process",
+            "unit of execution"
+          ]
+        },
+        {
+          "name": "threads share memory/resources",
+          "terms": [
+            "share memory",
+            "shares memory",
+            "share the same memory",
+            "shared memory",
+            "share resources",
+            "shares resources",
+            "share the same"
+          ],
+          "followup": "What risks come from threads sharing memory?"
+        },
+        {
+          "name": "context switching cost",
+          "terms": [
+            "context switch",
+            "context switching",
+            "switching is cheaper",
+            "faster to switch",
+            "overhead"
+          ],
+          "followup": "Why is switching between threads usually cheaper than between processes?"
+        },
+        {
+          "name": "synchronization / communication",
+          "terms": [
+            "synchronization",
+            "synchronisation",
+            "race condition",
+            "mutex",
+            "lock",
+            "inter-process",
+            "ipc",
+            "coordinate"
+          ],
+          "followup": "How would you protect shared data from a race condition?"
+        }
+      ],
+      "model_answer": "A process is an independent program in execution with its own memory space and resources, while a thread is a lightweight unit of execution within a process that shares that process's memory and resources with other threads. Because threads share memory, switching between threads is generally cheaper than switching between processes, but threads must coordinate to avoid corrupting shared data."
+    },
+    {
+      "id": "deadlock",
+      "kind": "concept",
+      "questions": [
+        "What is a deadlock, and name one way to prevent it?"
+      ],
+      "match_keywords": [
+        "deadlock"
+      ],
+      "criteria": [
+        {
+          "name": "definition: processes wait on each other forever",
+          "terms": [
+            "waiting for each other",
+            "wait for each other",
+            "waits for",
+            "blocked forever",
+            "indefinitely",
+            "circular",
+            "each holds",
+            "stuck",
+            "cannot proceed",
+            "can't proceed",
+            "none can proceed"
+          ],
+          "followup": "Describe a deadlock between two threads and two locks."
+        },
+        {
+          "name": "resources / locks involved",
+          "terms": [
+            "resource",
+            "resources",
+            "lock",
+            "locks",
+            "mutex"
+          ]
+        },
+        {
+          "name": "necessary conditions (Coffman)",
+          "terms": [
+            "mutual exclusion",
+            "hold and wait",
+            "no preemption",
+            "circular wait"
+          ],
+          "followup": "Name the four conditions needed for a deadlock."
+        },
+        {
+          "name": "a prevention technique",
+          "terms": [
+            "lock ordering",
+            "resource ordering",
+            "ordering",
+            "acquire in the same order",
+            "same order",
+            "timeout",
+            "banker",
+            "avoid hold and wait",
+            "preemption",
+            "try-lock",
+            "trylock",
+            "deadlock prevention",
+            "break one"
+          ],
+          "followup": "How does acquiring locks in a fixed order prevent a deadlock?"
+        }
+      ],
+      "model_answer": "A deadlock happens when two or more processes or threads are each holding a resource and waiting for one held by another, so none can ever proceed. It requires four conditions together: mutual exclusion, hold and wait, no preemption, and circular wait. Preventing it means breaking at least one condition, for example by making every thread acquire locks in a single fixed global order, which eliminates circular wait."
+    },
+    {
+      "id": "binary_search",
+      "kind": "concept",
+      "questions": [
+        "What is the time complexity of binary search, and what precondition does it require?"
+      ],
+      "match_keywords": [
+        "binary search",
+        "time complexity"
+      ],
+      "criteria": [
+        {
+          "name": "O(log n) time",
+          "terms": [
+            "o(log n)",
+            "log n",
+            "logn",
+            "logarithmic",
+            "log(n)",
+            "log base 2"
+          ],
+          "followup": "Why is the running time logarithmic rather than linear?"
+        },
+        {
+          "name": "requires sorted input",
+          "terms": [
+            "sorted",
+            "in order",
+            "ordered"
+          ],
+          "followup": "What goes wrong if the array is not sorted?"
+        },
+        {
+          "name": "halves the search space",
+          "terms": [
+            "half",
+            "halves",
+            "halving",
+            "divide",
+            "divides",
+            "middle",
+            "mid"
+          ],
+          "followup": "Walk through searching for 7 in [1,3,5,7,9]."
+        },
+        {
+          "name": "compare target with middle element",
+          "terms": [
+            "compare",
+            "compares",
+            "comparing",
+            "target",
+            "discard",
+            "eliminate"
+          ]
+        }
+      ],
+      "model_answer": "Binary search runs in O(log n) time. It repeatedly divides a sorted search space in half, comparing the target to the middle element and discarding the half that cannot contain it — which is why the array must already be sorted."
+    },
+    {
+      "id": "quick_vs_merge",
+      "kind": "concept",
+      "questions": [
+        "Compare the average-case time complexity of quicksort and mergesort."
+      ],
+      "match_keywords": [
+        "quicksort",
+        "mergesort",
+        "merge sort",
+        "quick sort"
+      ],
+      "criteria": [
+        {
+          "name": "both O(n log n) on average",
+          "terms": [
+            "o(n log n)",
+            "n log n",
+            "nlogn",
+            "n log(n)",
+            "n*log n",
+            "linearithmic"
+          ],
+          "followup": "Where does the log n factor come from in each algorithm?"
+        },
+        {
+          "name": "quicksort worst case O(n^2)",
+          "terms": [
+            "o(n^2)",
+            "n^2",
+            "n squared",
+            "n2",
+            "quadratic",
+            "worst case",
+            "worst-case"
+          ],
+          "followup": "What input makes quicksort slow, and how can you avoid it?"
+        },
+        {
+          "name": "quicksort pivot / partition",
+          "terms": [
+            "pivot",
+            "partition",
+            "partitioning"
+          ]
+        },
+        {
+          "name": "mergesort divide-and-merge, extra space",
+          "terms": [
+            "merge",
+            "merging",
+            "divide and conquer",
+            "extra space",
+            "o(n) space",
+            "auxiliary",
+            "additional memory",
+            "extra memory"
+          ],
+          "followup": "What extra memory does mergesort need and why?"
+        },
+        {
+          "name": "stability / in-place trade-off",
+          "terms": [
+            "stable",
+            "stability",
+            "in-place",
+            "in place",
+            "cache"
+          ],
+          "followup": "What does it mean for a sort to be stable?"
+        }
+      ],
+      "model_answer": "Both algorithms have O(n log n) average-case time. Quicksort partitions around a pivot and sorts in place, but its worst case degrades to O(n^2) with poor pivots. Mergesort always splits in half and merges, giving O(n log n) in every case and stable ordering, at the cost of O(n) extra space."
+    },
+    {
+      "id": "two_sum",
+      "kind": "concept",
+      "questions": [
+        "How would you find two elements in an array that sum to a target value?"
+      ],
+      "match_keywords": [
+        "two elements",
+        "sum to a target",
+        "target value",
+        "sum"
+      ],
+      "criteria": [
+        {
+          "name": "hash map / set lookup",
+          "terms": [
+            "hash map",
+            "hashmap",
+            "hash table",
+            "hashtable",
+            "dictionary",
+            "hash set",
+            "hashset"
+          ],
+          "followup": "Why does a hash map make this faster than checking every pair?"
+        },
+        {
+          "name": "check the complement (target - current)",
+          "terms": [
+            "complement",
+            "target minus",
+            "target -",
+            "difference",
+            "remaining value",
+            "need"
+          ],
+          "followup": "For target 9 and number 4, what do you look up?"
+        },
+        {
+          "name": "single pass, O(n)",
+          "terms": [
+            "o(n)",
+            "one pass",
+            "single pass",
+            "linear time",
+            "linear"
+          ]
+        },
+        {
+          "name": "brute force baseline O(n^2)",
+          "terms": [
+            "brute force",
+            "brute-force",
+            "nested loop",
+            "two loops",
+            "o(n^2)",
+            "n^2"
+          ],
+          "followup": "What is the time complexity of checking every pair?"
+        },
+        {
+          "name": "sorted + two pointers alternative",
+          "terms": [
+            "two pointers",
+            "two-pointer",
+            "sort the array",
+            "sorted array",
+            "sorting"
+          ]
+        }
+      ],
+      "model_answer": "The brute-force way checks every pair in O(n^2) time. A better approach makes a single pass while storing the numbers already seen in a hash map: for each element, look up target minus that element (the complement); if present you have the pair, otherwise store the element. This is O(n) time and O(n) space. If the array is sorted, two pointers from both ends also work in O(n) time with O(1) space."
+    },
+    {
+      "id": "dp_vs_recursion",
+      "kind": "concept",
+      "questions": [
+        "What distinguishes a dynamic programming solution from plain recursion?"
+      ],
+      "match_keywords": [
+        "dynamic programming",
+        "recursion"
+      ],
+      "criteria": [
+        {
+          "name": "overlapping subproblems",
+          "terms": [
+            "overlapping subproblems",
+            "overlapping sub-problems",
+            "overlapping",
+            "repeated subproblems",
+            "same subproblem",
+            "repeated calculations",
+            "recomputation",
+            "recompute",
+            "recomputing"
+          ],
+          "followup": "Which part of computing Fibonacci recursively is repeated work?"
+        },
+        {
+          "name": "optimal substructure",
+          "terms": [
+            "optimal substructure",
+            "optimal sub-structure",
+            "optimal solution",
+            "build up",
+            "built from"
+          ],
+          "followup": "What does optimal substructure mean for the shortest-path example?"
+        },
+        {
+          "name": "memoization (top-down caching)",
+          "terms": [
+            "memoization",
+            "memoisation",
+            "memoize",
+            "memo",
+            "cache",
+            "caching",
+            "store results",
+            "stores results",
+            "stored results"
+          ],
+          "followup": "What would you cache in a memoized Fibonacci?"
+        },
+        {
+          "name": "tabulation (bottom-up)",
+          "terms": [
+            "tabulation",
+            "bottom-up",
+            "bottom up",
+            "table",
+            "iterative"
+          ],
+          "followup": "How does a bottom-up table avoid recursion?"
+        },
+        {
+          "name": "efficiency gain over exponential recursion",
+          "terms": [
+            "exponential",
+            "polynomial",
+            "faster",
+            "efficient",
+            "avoids",
+            "avoid"
+          ]
+        }
+      ],
+      "model_answer": "Plain recursion may solve the same subproblem many times, which can make it exponential. Dynamic programming applies when a problem has overlapping subproblems and optimal substructure: it solves each distinct subproblem once and stores the result, either top-down with memoization or bottom-up with a table (tabulation), usually bringing the cost down to polynomial time."
+    },
+    {
+      "id": "js_var_let_const",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between var, let, and const in JavaScript?"
+      ],
+      "match_keywords": [
+        "var",
+        "let",
+        "const",
+        "javascript"
+      ],
+      "criteria": [
+        {
+          "name": "var is function-scoped",
+          "terms": [
+            "function scope",
+            "function-scoped",
+            "function scoped",
+            "scoped to the function"
+          ],
+          "followup": "What does a var declared inside an if block do after the block ends?"
+        },
+        {
+          "name": "let/const are block-scoped",
+          "terms": [
+            "block scope",
+            "block-scoped",
+            "block scoped",
+            "scoped to the block",
+            "curly braces",
+            "inside a block"
+          ],
+          "followup": "What error do you get using a let variable before its declaration?"
+        },
+        {
+          "name": "const cannot be reassigned",
+          "terms": [
+            "cannot be reassigned",
+            "can't be reassigned",
+            "not be reassigned",
+            "no reassignment",
+            "constant",
+            "cannot be changed",
+            "can't be changed",
+            "immutable binding"
+          ],
+          "followup": "Can you push to a const array? Why?"
+        },
+        {
+          "name": "hoisting behaviour",
+          "terms": [
+            "hoist",
+            "hoisted",
+            "hoisting",
+            "temporal dead zone",
+            "tdz",
+            "undefined"
+          ],
+          "followup": "What does console.log(x) print if var x = 5 comes later?"
+        },
+        {
+          "name": "redeclaration rules",
+          "terms": [
+            "redeclare",
+            "redeclared",
+            "redeclaration",
+            "declared again",
+            "re-declare"
+          ]
+        }
+      ],
+      "model_answer": "var is function-scoped and can be redeclared, and is hoisted with an initial value of undefined. let and const are block-scoped; let can be reassigned but not redeclared in the same scope, while const cannot be reassigned after initialization (though an object or array it references can still be mutated). let and const are also hoisted but sit in the temporal dead zone until their declaration runs."
+    },
+    {
+      "id": "balanced_tree",
+      "kind": "concept",
+      "questions": [
+        "Describe how you would check whether a binary tree is height-balanced."
+      ],
+      "match_keywords": [
+        "height-balanced",
+        "balanced",
+        "binary tree"
+      ],
+      "criteria": [
+        {
+          "name": "compute height of subtrees",
+          "terms": [
+            "height",
+            "depth"
+          ],
+          "followup": "How do you compute the height of a node's subtree?"
+        },
+        {
+          "name": "recursion over left and right children",
+          "terms": [
+            "recursion",
+            "recursive",
+            "recursively",
+            "left subtree",
+            "right subtree",
+            "left and right"
+          ]
+        },
+        {
+          "name": "height difference at most 1",
+          "terms": [
+            "differ by",
+            "difference",
+            "at most 1",
+            "no more than 1",
+            "not more than 1",
+            "<= 1",
+            "abs"
+          ],
+          "followup": "What is the exact rule for a node to be balanced?"
+        },
+        {
+          "name": "every node must satisfy the condition",
+          "terms": [
+            "every node",
+            "each node",
+            "all nodes",
+            "at every",
+            "at each"
+          ],
+          "followup": "Why must the check apply to every node, not just the root?"
+        },
+        {
+          "name": "O(n) by returning a sentinel / combining checks",
+          "terms": [
+            "o(n)",
+            "single pass",
+            "bottom-up",
+            "bottom up",
+            "post-order",
+            "postorder",
+            "-1",
+            "sentinel",
+            "return early"
+          ],
+          "followup": "How can you avoid recomputing heights over and over?"
+        }
+      ],
+      "model_answer": "A tree is height-balanced if, for every node, the heights of its left and right subtrees differ by at most 1. A simple recursive solution computes the height of each subtree and checks the difference at each node (O(n^2) in the worst case if heights are recomputed). The O(n) version does one post-order traversal that returns the height, or a sentinel such as -1 as soon as any subtree is unbalanced."
+    },
+    {
+      "id": "bfs_vs_dfs",
+      "kind": "concept",
+      "questions": [
+        "Explain the difference between BFS and DFS, and when you would use each."
+      ],
+      "match_keywords": [
+        "bfs",
+        "dfs",
+        "breadth",
+        "depth-first"
+      ],
+      "criteria": [
+        {
+          "name": "BFS uses a queue, explores level by level",
+          "terms": [
+            "queue",
+            "level by level",
+            "level-by-level",
+            "level order",
+            "breadth first",
+            "breadth-first",
+            "layer"
+          ],
+          "followup": "What data structure drives BFS, and why?"
+        },
+        {
+          "name": "DFS uses a stack or recursion, goes deep first",
+          "terms": [
+            "stack",
+            "recursion",
+            "recursive",
+            "depth first",
+            "depth-first",
+            "as deep as",
+            "backtrack"
+          ],
+          "followup": "How can recursion stand in for the explicit stack in DFS?"
+        },
+        {
+          "name": "BFS finds shortest path in unweighted graphs",
+          "terms": [
+            "shortest path",
+            "shortest",
+            "fewest edges",
+            "minimum number of",
+            "unweighted"
+          ],
+          "followup": "Why does BFS find the shortest path in an unweighted graph?"
+        },
+        {
+          "name": "DFS use cases (cycles, topological sort, connectivity, backtracking)",
+          "terms": [
+            "cycle",
+            "cycles",
+            "topological",
+            "connected components",
+            "backtracking",
+            "path exists",
+            "maze"
+          ]
+        },
+        {
+          "name": "visited set and O(V+E) complexity",
+          "terms": [
+            "visited",
+            "o(v+e)",
+            "v + e",
+            "v+e",
+            "vertices and edges",
+            "time complexity"
+          ],
+          "followup": "What happens on a cyclic graph without a visited set?"
+        }
+      ],
+      "model_answer": "BFS explores a graph level by level using a queue, so in an unweighted graph the first time it reaches a node is along a shortest path. DFS goes as deep as possible along one branch before backtracking, using a stack or recursion, which suits cycle detection, topological sorting, connectivity and backtracking problems. Both visit each vertex and edge once, O(V+E), and need a visited set on general graphs."
+    },
+    {
+      "id": "url_shortener",
+      "kind": "concept",
+      "questions": [
+        "How would you design a URL-shortening service at a high level?"
+      ],
+      "match_keywords": [
+        "url-shortening",
+        "url shortening",
+        "shorten",
+        "design"
+      ],
+      "criteria": [
+        {
+          "name": "unique short key generation (hash / base62 / counter)",
+          "terms": [
+            "base62",
+            "base 62",
+            "hash",
+            "hashing",
+            "counter",
+            "unique id",
+            "unique key",
+            "random string",
+            "encode",
+            "encoding"
+          ],
+          "followup": "How would you generate short, unique keys?"
+        },
+        {
+          "name": "storage mapping short key to long URL",
+          "terms": [
+            "database",
+            "key-value",
+            "key value",
+            "nosql",
+            "mapping",
+            "table",
+            "store the mapping",
+            "stores the mapping"
+          ],
+          "followup": "What would you store, and what would be the key?"
+        },
+        {
+          "name": "redirect flow",
+          "terms": [
+            "redirect",
+            "redirects",
+            "301",
+            "302",
+            "http redirect"
+          ],
+          "followup": "What does the server respond with when someone opens a short link?"
+        },
+        {
+          "name": "collisions / uniqueness handling",
+          "terms": [
+            "collision",
+            "collisions",
+            "unique",
+            "uniqueness",
+            "duplicate"
+          ],
+          "followup": "What if two long URLs get the same key?"
+        },
+        {
+          "name": "scalability: caching / load balancing / replication",
+          "terms": [
+            "cache",
+            "caching",
+            "redis",
+            "load balancer",
+            "load balancing",
+            "replication",
+            "shard",
+            "sharding",
+            "scale",
+            "scalab"
+          ],
+          "followup": "Reads vastly outnumber writes: what would you add to cope?"
+        },
+        {
+          "name": "extras: expiry / analytics / rate limiting",
+          "terms": [
+            "expiry",
+            "expire",
+            "expiration",
+            "analytics",
+            "rate limit",
+            "rate limiting",
+            "custom alias"
+          ]
+        }
+      ],
+      "model_answer": "Accept a long URL and generate a short unique key, for example by base62-encoding a unique counter or ID (or hashing and handling collisions). Store the key-to-URL mapping in a database or key-value store. On a request for the short link, look up the key and issue an HTTP redirect (301/302). Because reads far outnumber writes, add a cache such as Redis, put servers behind a load balancer, and replicate or shard the store; optionally add expiry, analytics and rate limiting."
+    },
+    {
+      "id": "url_in_browser",
+      "kind": "concept",
+      "questions": [
+        "At a high level, what happens when you type a URL into a browser and press enter?"
+      ],
+      "match_keywords": [
+        "type a url",
+        "browser",
+        "press enter",
+        "url"
+      ],
+      "criteria": [
+        {
+          "name": "DNS resolution",
+          "terms": [
+            "dns",
+            "domain name",
+            "ip address",
+            "resolve",
+            "resolves",
+            "resolver"
+          ],
+          "followup": "What does DNS return, and why is it needed?"
+        },
+        {
+          "name": "TCP connection to the server",
+          "terms": [
+            "tcp",
+            "connection",
+            "three-way handshake",
+            "handshake",
+            "socket"
+          ],
+          "followup": "What is the purpose of the TCP handshake?"
+        },
+        {
+          "name": "TLS / HTTPS",
+          "terms": [
+            "tls",
+            "ssl",
+            "https",
+            "certificate",
+            "encrypt"
+          ],
+          "followup": "What does the TLS handshake achieve for an https URL?"
+        },
+        {
+          "name": "HTTP request and response",
+          "terms": [
+            "http request",
+            "http response",
+            "get request",
+            "sends a request",
+            "send a request",
+            "request to the server",
+            "server responds",
+            "server sends back",
+            "response"
+          ],
+          "followup": "What does the browser send to the server?"
+        },
+        {
+          "name": "browser parses and renders the page",
+          "terms": [
+            "render",
+            "renders",
+            "rendering",
+            "parse",
+            "parses",
+            "dom",
+            "html",
+            "css",
+            "javascript"
+          ],
+          "followup": "What happens after the HTML arrives?"
+        }
+      ],
+      "model_answer": "The browser parses the URL, then resolves the domain to an IP address via DNS (checking caches first). It opens a TCP connection to the server and, for HTTPS, performs a TLS handshake. It sends an HTTP request; the server (possibly via load balancers) returns a response, usually HTML. The browser parses the HTML, requests further resources such as CSS, JavaScript and images, builds the DOM, and renders the page."
+    },
+    {
+      "id": "star_disagreement",
+      "kind": "star",
+      "questions": [
+        "Tell me about a time you disagreed with a teammate. How did you handle it?"
+      ],
+      "match_keywords": [
+        "disagreed",
+        "teammate"
+      ],
+      "criteria": [
+        {
+          "name": "Situation: the context and what the disagreement was about",
+          "terms": [
+            "situation",
+            "project",
+            "team",
+            "teammate",
+            "colleague",
+            "classmate",
+            "during",
+            "internship",
+            "college",
+            "we were",
+            "disagreed",
+            "disagreement",
+            "different opinion",
+            "different approach"
+          ],
+          "followup": "Can you set the scene: who was involved and what exactly did you disagree about?"
+        },
+        {
+          "name": "Task: your role or what needed to be achieved",
+          "terms": [
+            "my role",
+            "i was responsible",
+            "my task",
+            "goal",
+            "needed to",
+            "had to",
+            "deadline",
+            "responsible for",
+            "objective"
+          ],
+          "followup": "What was your responsibility in that situation?"
+        },
+        {
+          "name": "Action: what you did to handle it",
+          "terms": [
+            "i decided",
+            "i talked",
+            "i spoke",
+            "i asked",
+            "i suggested",
+            "i proposed",
+            "i explained",
+            "i listened",
+            "i set up",
+            "i met",
+            "i reached out",
+            "we discussed",
+            "i tried"
+          ],
+          "followup": "What specific steps did you personally take to resolve it?"
+        },
+        {
+          "name": "Result: the outcome",
+          "terms": [
+            "as a result",
+            "result",
+            "outcome",
+            "in the end",
+            "finally",
+            "we agreed",
+            "we delivered",
+            "we completed",
+            "resolved",
+            "successfully",
+            "improved"
+          ],
+          "followup": "How did it end, and what was the outcome for the project?"
+        },
+        {
+          "name": "Resolution skills: listening, perspective, compromise",
+          "terms": [
+            "listened",
+            "perspective",
+            "understand their",
+            "understood",
+            "compromise",
+            "common ground",
+            "respect",
+            "agreed on",
+            "data",
+            "evidence"
+          ],
+          "followup": "What did you do to understand their point of view?"
+        }
+      ],
+      "model_answer": "A strong answer follows STAR. Situation: briefly set the scene and what you disagreed about. Task: your responsibility or the goal at stake. Action: what YOU did — for example listened to their view, shared your reasoning with evidence, and proposed a compromise or test. Result: what happened and what you took away. Keep it about the problem, not the person. (This is an outline of a good structure, not a script to copy.)"
+    },
+    {
+      "id": "star_proud_project",
+      "kind": "star",
+      "questions": [
+        "Describe a project you are proud of and what your specific contribution was."
+      ],
+      "match_keywords": [
+        "proud",
+        "project",
+        "contribution"
+      ],
+      "criteria": [
+        {
+          "name": "Situation: what the project was and why it mattered",
+          "terms": [
+            "project",
+            "the goal",
+            "we built",
+            "we were building",
+            "application",
+            "app",
+            "system",
+            "website",
+            "hackathon",
+            "internship",
+            "college"
+          ],
+          "followup": "What was the project and why did it matter?"
+        },
+        {
+          "name": "Task: your assigned responsibility",
+          "terms": [
+            "my role",
+            "i was responsible",
+            "my task",
+            "my part",
+            "i was in charge",
+            "i was assigned",
+            "responsible for",
+            "i owned"
+          ],
+          "followup": "Which part was yours?"
+        },
+        {
+          "name": "Action: specifically what you built or did",
+          "terms": [
+            "i built",
+            "i wrote",
+            "i designed",
+            "i implemented",
+            "i developed",
+            "i created",
+            "i led",
+            "i tested",
+            "i fixed",
+            "i set up",
+            "i integrated",
+            "i optimized",
+            "i optimised"
+          ],
+          "followup": "What exactly did you build or decide yourself?"
+        },
+        {
+          "name": "Result: measurable outcome or impact",
+          "terms": [
+            "as a result",
+            "result",
+            "outcome",
+            "improved",
+            "reduced",
+            "increased",
+            "users",
+            "deployed",
+            "launched",
+            "won",
+            "delivered",
+            "%",
+            "faster"
+          ],
+          "followup": "What was the measurable outcome?"
+        },
+        {
+          "name": "Personal contribution made explicit",
+          "terms": [
+            "my contribution",
+            "my part",
+            "specifically",
+            "i personally",
+            "my responsibility",
+            "i was the one"
+          ],
+          "followup": "Which parts did you do versus the team?"
+        }
+      ],
+      "model_answer": "A strong answer follows STAR and keeps 'I' separate from 'we'. Situation: what the project was and why it mattered. Task: your responsibility within it. Action: the specific things you built or decided, including a challenge you overcame. Result: the measurable outcome (users, speed, grade, deployment) and what you learned. (An outline of a good structure, not a script.)"
+    },
+    {
+      "id": "star_missed_deadline",
+      "kind": "star",
+      "questions": [
+        "Tell me about a time you missed a deadline. What happened, and what did you learn?"
+      ],
+      "match_keywords": [
+        "missed a deadline",
+        "deadline"
+      ],
+      "criteria": [
+        {
+          "name": "Situation: what the deadline was and context",
+          "terms": [
+            "deadline",
+            "due",
+            "project",
+            "assignment",
+            "submission",
+            "sprint",
+            "semester",
+            "internship",
+            "college",
+            "team"
+          ],
+          "followup": "What was the deadline and what was it for?"
+        },
+        {
+          "name": "Task: what you were responsible for delivering",
+          "terms": [
+            "i was responsible",
+            "my task",
+            "my role",
+            "needed to",
+            "had to",
+            "i was supposed to",
+            "responsible for"
+          ],
+          "followup": "What were you responsible for delivering?"
+        },
+        {
+          "name": "Action: what you did when it slipped",
+          "terms": [
+            "i informed",
+            "i told",
+            "i communicated",
+            "i informed my",
+            "i informed the",
+            "i asked for",
+            "i reprioritized",
+            "i reprioritised",
+            "i worked",
+            "i delivered",
+            "i apologized",
+            "i apologised",
+            "i fixed",
+            "i broke"
+          ],
+          "followup": "What did you do when you realised it would slip?"
+        },
+        {
+          "name": "Result: the outcome",
+          "terms": [
+            "as a result",
+            "result",
+            "outcome",
+            "in the end",
+            "finally",
+            "delivered",
+            "completed",
+            "late by",
+            "consequence"
+          ],
+          "followup": "What was the consequence or outcome?"
+        },
+        {
+          "name": "Ownership and lesson learned",
+          "terms": [
+            "i learned",
+            "i learnt",
+            "lesson",
+            "my mistake",
+            "my fault",
+            "took responsibility",
+            "i underestimated",
+            "next time",
+            "now i",
+            "since then",
+            "going forward",
+            "from then on"
+          ],
+          "followup": "What do you do differently now because of it?"
+        }
+      ],
+      "model_answer": "A strong answer is honest and accountable. Situation and Task: the deadline and what you owned. Action: what went wrong without blaming others, how and when you communicated the delay, and what you did to limit the damage. Result: the outcome. Then the learning that matters most for this question: a concrete change you made afterwards (earlier estimates, checkpoints, flagging risks sooner). (An outline of a good structure, not a script.)"
+    },
+    {
+      "id": "star_learn_quickly",
+      "kind": "star",
+      "questions": [
+        "Describe a situation where you had to learn something new quickly to finish a task."
+      ],
+      "match_keywords": [
+        "learn",
+        "quickly",
+        "new"
+      ],
+      "criteria": [
+        {
+          "name": "Situation: what was new and why it was urgent",
+          "terms": [
+            "new to me",
+            "had never",
+            "didn't know",
+            "did not know",
+            "unfamiliar",
+            "new technology",
+            "new framework",
+            "new tool",
+            "short time",
+            "deadline",
+            "project",
+            "internship"
+          ],
+          "followup": "What was new to you and why was the time short?"
+        },
+        {
+          "name": "Task: what had to be delivered",
+          "terms": [
+            "i needed to",
+            "i had to",
+            "my task",
+            "my goal",
+            "responsible for",
+            "needed to deliver",
+            "required to"
+          ],
+          "followup": "What exactly did you need to deliver?"
+        },
+        {
+          "name": "Action: how you learned (docs, tutorials, mentors, practice)",
+          "terms": [
+            "documentation",
+            "docs",
+            "tutorial",
+            "tutorials",
+            "course",
+            "video",
+            "i asked",
+            "mentor",
+            "prototype",
+            "practised",
+            "practiced",
+            "experimented",
+            "read",
+            "i studied",
+            "i started with",
+            "step by step"
+          ],
+          "followup": "How did you go about learning it so quickly?"
+        },
+        {
+          "name": "Result: you completed the task",
+          "terms": [
+            "as a result",
+            "result",
+            "outcome",
+            "completed",
+            "delivered",
+            "finished",
+            "successfully",
+            "working",
+            "shipped",
+            "deployed"
+          ],
+          "followup": "What did you deliver in the end?"
+        },
+        {
+          "name": "Reflection on how you learn",
+          "terms": [
+            "i learned",
+            "i learnt",
+            "lesson",
+            "now i",
+            "takeaway",
+            "approach",
+            "since then",
+            "strategy"
+          ],
+          "followup": "How has that experience changed the way you learn?"
+        }
+      ],
+      "model_answer": "A strong answer follows STAR. Situation: what was unfamiliar and the time pressure. Task: what you had to deliver. Action: your learning method — for instance reading official documentation, building a small prototype, asking someone experienced, and focusing on only what the task needed. Result: the task delivered and what you can now do. Close with how the experience shaped the way you learn. (An outline, not a script.)"
+    },
+    {
+      "id": "star_push_back",
+      "kind": "star",
+      "questions": [
+        "Tell me about a time you had to push back on a decision you thought was wrong."
+      ],
+      "match_keywords": [
+        "push back",
+        "decision",
+        "wrong"
+      ],
+      "criteria": [
+        {
+          "name": "Situation: the decision and why you doubted it",
+          "terms": [
+            "decision",
+            "decided",
+            "manager",
+            "lead",
+            "team lead",
+            "professor",
+            "mentor",
+            "plan",
+            "approach",
+            "project",
+            "concern",
+            "risk"
+          ],
+          "followup": "What was the decision and why did you think it was wrong?"
+        },
+        {
+          "name": "Task: your responsibility to speak up",
+          "terms": [
+            "my role",
+            "i was responsible",
+            "needed to",
+            "had to",
+            "i felt",
+            "i believed",
+            "responsible for"
+          ],
+          "followup": "Why was it your place to speak up?"
+        },
+        {
+          "name": "Action: how you raised it respectfully",
+          "terms": [
+            "i raised",
+            "i explained",
+            "i presented",
+            "i showed",
+            "i suggested",
+            "i proposed",
+            "i discussed",
+            "i asked",
+            "i shared",
+            "alternative",
+            "respectfully",
+            "privately",
+            "i prepared"
+          ],
+          "followup": "How did you raise your concern?"
+        },
+        {
+          "name": "Result: what was decided and what happened",
+          "terms": [
+            "as a result",
+            "result",
+            "outcome",
+            "in the end",
+            "they agreed",
+            "we agreed",
+            "we changed",
+            "we went with",
+            "decision was",
+            "accepted"
+          ],
+          "followup": "What happened after you spoke up?"
+        },
+        {
+          "name": "Evidence-based and respectful",
+          "terms": [
+            "data",
+            "evidence",
+            "numbers",
+            "benchmark",
+            "metrics",
+            "respect",
+            "respectfully",
+            "listened",
+            "committed",
+            "supported the decision",
+            "disagree and commit"
+          ],
+          "followup": "What evidence did you bring to support your view?"
+        }
+      ],
+      "model_answer": "A strong answer shows you can disagree constructively. Situation: the decision and the risk you saw. Task: why it fell to you to speak up. Action: how you raised it — privately and respectfully, backed by data or evidence, with an alternative — and that you listened to their reasoning. Result: what was decided; if they chose differently, how you supported it anyway. (An outline, not a script.)"
+    },
+    {
+      "id": "hr_why_role",
+      "kind": "criteria",
+      "questions": [
+        "Why are you interested in this role?"
+      ],
+      "match_keywords": [
+        "interested in this role",
+        "this role"
+      ],
+      "criteria": [
+        {
+          "name": "Specific reasons tied to the role",
+          "terms": [
+            "the role",
+            "this role",
+            "this position",
+            "responsibilities",
+            "the work",
+            "involves",
+            "opportunity to",
+            "work on",
+            "technology",
+            "technologies"
+          ],
+          "followup": "What specifically about the day-to-day work appeals to you?"
+        },
+        {
+          "name": "Fit with your skills and experience",
+          "terms": [
+            "my skills",
+            "my experience",
+            "my background",
+            "i have experience",
+            "i have worked",
+            "my projects",
+            "i have built",
+            "my studies",
+            "i enjoy",
+            "strong in"
+          ],
+          "followup": "Which of your skills or projects match this role?"
+        },
+        {
+          "name": "Interest in the company or team",
+          "terms": [
+            "company",
+            "organization",
+            "organisation",
+            "your team",
+            "your products",
+            "mission",
+            "culture",
+            "values",
+            "reputation"
+          ],
+          "followup": "What do you know about our company or team?"
+        },
+        {
+          "name": "What you would contribute / learn",
+          "terms": [
+            "contribute",
+            "add value",
+            "help the team",
+            "bring",
+            "learn",
+            "grow",
+            "growth",
+            "impact"
+          ],
+          "followup": "What would you contribute in your first six months?"
+        }
+      ],
+      "model_answer": "A strong answer is specific, not generic. Name what attracts you about the actual work of the role, connect it to concrete skills or projects you bring, show you know something real about the company or team, and say what you hope to contribute and learn. (A guide to what interviewers look for, not a script.)"
+    },
+    {
+      "id": "hr_future_plans",
+      "kind": "criteria",
+      "questions": [
+        "Where do you see yourself in three to five years?"
+      ],
+      "match_keywords": [
+        "three to five years",
+        "see yourself",
+        "years"
+      ],
+      "criteria": [
+        {
+          "name": "Growth in skills and responsibility",
+          "terms": [
+            "grow",
+            "growth",
+            "senior",
+            "lead",
+            "leadership",
+            "expertise",
+            "responsibility",
+            "responsibilities",
+            "skills",
+            "develop",
+            "mastery",
+            "expert"
+          ],
+          "followup": "Which skills do you want to build over that time?"
+        },
+        {
+          "name": "Alignment with this role / company",
+          "terms": [
+            "this company",
+            "this role",
+            "the team",
+            "your company",
+            "organization",
+            "organisation",
+            "in this field",
+            "this domain",
+            "with the company"
+          ],
+          "followup": "How does that path connect to this company?"
+        },
+        {
+          "name": "Realistic path (learning, mentoring, contributing)",
+          "terms": [
+            "learn",
+            "learning",
+            "mentor",
+            "mentoring",
+            "contribute",
+            "contributing",
+            "deliver",
+            "take ownership",
+            "projects",
+            "step by step"
+          ],
+          "followup": "What would you do in this role to move toward that?"
+        },
+        {
+          "name": "Commitment without unrealistic claims",
+          "terms": [
+            "long term",
+            "long-term",
+            "stay",
+            "commit",
+            "committed",
+            "invest",
+            "build a career"
+          ]
+        }
+      ],
+      "model_answer": "A strong answer describes realistic growth that fits the role: deepening technical skills, taking on more ownership or mentoring, and contributing to the team's goals. Interviewers look for ambition that is aligned with the company rather than a path that clearly leads elsewhere. (A guide, not a script.)"
+    },
+    {
+      "id": "hr_salary",
+      "kind": "criteria",
+      "questions": [
+        "What are your salary expectations for this position?"
+      ],
+      "match_keywords": [
+        "salary",
+        "expectations",
+        "compensation"
+      ],
+      "criteria": [
+        {
+          "name": "Grounded in research / market range",
+          "terms": [
+            "market",
+            "range",
+            "research",
+            "industry",
+            "standard",
+            "benchmark",
+            "typical",
+            "average",
+            "researched",
+            "comparable"
+          ],
+          "followup": "What range did you find for this kind of role, and from where?"
+        },
+        {
+          "name": "Flexibility / openness to discuss",
+          "terms": [
+            "flexible",
+            "negotiable",
+            "open to",
+            "open to discussing",
+            "discuss",
+            "depends",
+            "depending on",
+            "willing to"
+          ],
+          "followup": "How flexible are you on the number?"
+        },
+        {
+          "name": "Anchored in your skills and value",
+          "terms": [
+            "my skills",
+            "my experience",
+            "experience",
+            "qualifications",
+            "value",
+            "contribute",
+            "responsibilities",
+            "scope of the role"
+          ],
+          "followup": "What in your skills and experience supports that figure?"
+        },
+        {
+          "name": "Whole package and growth, not just pay",
+          "terms": [
+            "benefits",
+            "package",
+            "learning",
+            "growth",
+            "opportunity",
+            "total compensation",
+            "culture",
+            "training"
+          ],
+          "followup": "Beyond salary, what matters to you in an offer?"
+        }
+      ],
+      "model_answer": "A strong answer is informed and flexible: reference the market range you researched for this role and location, tie your expectation to your skills and the scope of the job, stay open to discussing the full package (benefits, learning, growth), and avoid an inflexible number or an extreme figure. (A guide, not a script.)"
+    },
+    {
+      "id": "hr_leaving_current",
+      "kind": "criteria",
+      "questions": [
+        "Why are you looking to leave your current position?"
+      ],
+      "match_keywords": [
+        "leave your current",
+        "current position",
+        "leave"
+      ],
+      "criteria": [
+        {
+          "name": "Positive, forward-looking reasons",
+          "terms": [
+            "looking for",
+            "seeking",
+            "opportunity",
+            "new challenges",
+            "next step",
+            "growth",
+            "learn",
+            "broaden",
+            "expand",
+            "excited",
+            "interested in"
+          ],
+          "followup": "What are you hoping to find that you do not have now?"
+        },
+        {
+          "name": "Tied to this role or field",
+          "terms": [
+            "this role",
+            "this position",
+            "this company",
+            "your company",
+            "your team",
+            "this field",
+            "this domain",
+            "the role"
+          ],
+          "followup": "Why does this role fit that?"
+        },
+        {
+          "name": "Professional, factual tone",
+          "terms": [
+            "grateful",
+            "learned a lot",
+            "i learned",
+            "valuable",
+            "appreciate",
+            "enjoyed",
+            "respect",
+            "good experience"
+          ]
+        },
+        {
+          "name": "What you want next",
+          "terms": [
+            "i want",
+            "i would like",
+            "i'd like",
+            "my goal",
+            "my goals",
+            "ready for",
+            "looking to",
+            "aiming"
+          ],
+          "followup": "What would your ideal next step look like?"
+        }
+      ],
+      "avoid": [
+        "hate",
+        "terrible",
+        "toxic",
+        "worst",
+        "my boss was",
+        "my manager was",
+        "stupid",
+        "useless",
+        "awful",
+        "horrible"
+      ],
+      "avoid_note": "Try to frame your reasons around what you are moving toward rather than criticizing a past employer or colleagues.",
+      "model_answer": "A strong answer is positive and forward-looking: acknowledge what you gained, then explain what you are seeking next (new challenges, growth, different technologies) and why this role fits. Avoid criticizing your current or past employer. If you are a fresher, adapt the idea to why you are choosing this opportunity over alternatives. (A guide, not a script.)"
+    },
+    {
+      "id": "hr_weakness",
+      "kind": "criteria",
+      "questions": [
+        "What is a weakness you are actively working to improve?"
+      ],
+      "match_keywords": [
+        "weakness",
+        "improve"
+      ],
+      "criteria": [
+        {
+          "name": "A genuine, specific weakness",
+          "terms": [
+            "my weakness",
+            "a weakness",
+            "i struggle",
+            "i tend to",
+            "i used to",
+            "i find it hard",
+            "i find it difficult",
+            "i am not",
+            "i'm not",
+            "i sometimes",
+            "i have difficulty"
+          ],
+          "followup": "Can you name one specific weakness, not a disguised strength?"
+        },
+        {
+          "name": "Concrete steps you are taking",
+          "terms": [
+            "working on",
+            "i am working",
+            "i'm working",
+            "improving",
+            "improve",
+            "practice",
+            "practise",
+            "course",
+            "habit",
+            "i started",
+            "i have started",
+            "technique",
+            "steps",
+            "i use",
+            "i set",
+            "schedule",
+            "feedback"
+          ],
+          "followup": "What exactly are you doing to improve it?"
+        },
+        {
+          "name": "Evidence of progress",
+          "terms": [
+            "now i",
+            "as a result",
+            "improved",
+            "progress",
+            "since then",
+            "better at",
+            "noticed",
+            "recently",
+            "already"
+          ],
+          "followup": "What has improved so far?"
+        },
+        {
+          "name": "Self-awareness without being irrelevant or a disguised strength",
+          "terms": [
+            "aware",
+            "realized",
+            "realised",
+            "learned",
+            "lesson",
+            "reflect",
+            "understand that"
+          ]
+        }
+      ],
+      "model_answer": "A strong answer names a real, specific weakness that is not critical to the role, explains the concrete steps you are taking (a habit, course, feedback loop), and gives evidence of progress. Avoid disguised strengths such as 'I work too hard' and avoid weaknesses that disqualify you for the job. (A guide, not a script.)"
+    },
+    {
+      "id": "java_interface_vs_abstract",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between an interface and an abstract class in Java?"
+      ],
+      "match_keywords": [
+        "interface",
+        "abstract class"
+      ],
+      "criteria": [
+        {
+          "name": "interface: contract of methods a class implements",
+          "terms": [
+            "contract",
+            "implements",
+            "implement",
+            "only declares",
+            "declares methods",
+            "no implementation",
+            "default method",
+            "default methods"
+          ],
+          "followup": "How does a class use an interface, and can it implement more than one?"
+        },
+        {
+          "name": "abstract class: partial implementation and shared state",
+          "terms": [
+            "partial implementation",
+            "shared code",
+            "shared state",
+            "fields",
+            "constructor",
+            "instance variables",
+            "common behavior",
+            "common behaviour",
+            "can have state",
+            "concrete methods"
+          ],
+          "followup": "What can an abstract class hold that an interface traditionally could not?"
+        },
+        {
+          "name": "multiple interfaces but a single superclass",
+          "terms": [
+            "multiple interfaces",
+            "implement multiple",
+            "implement many",
+            "multiple inheritance",
+            "only one class",
+            "single inheritance",
+            "extend only one",
+            "extends only one",
+            "one abstract class"
+          ],
+          "followup": "Why does Java allow many interfaces but only one superclass?"
+        },
+        {
+          "name": "cannot be instantiated directly",
+          "terms": [
+            "cannot be instantiated",
+            "can't be instantiated",
+            "cannot create an object",
+            "can't create an object",
+            "cannot instantiate",
+            "not instantiate"
+          ]
+        },
+        {
+          "name": "when to choose which",
+          "terms": [
+            "is-a",
+            "is a relationship",
+            "capability",
+            "unrelated classes",
+            "related classes",
+            "common base",
+            "when you want",
+            "use an interface",
+            "use an abstract"
+          ],
+          "followup": "Give an example where you would pick an interface over an abstract class."
+        }
+      ],
+      "model_answer": "An interface defines a contract: it declares methods (and, since Java 8, default and static methods) that implementing classes must provide, and a class can implement many interfaces. An abstract class can hold shared state, constructors and a mix of implemented and abstract methods, but a class can extend only one. Neither can be instantiated directly. Use an interface to describe a capability that unrelated classes can share, and an abstract class when related classes share common code or state."
+    },
+    {
+      "id": "java_gc",
+      "kind": "concept",
+      "questions": [
+        "How does garbage collection work in Java at a high level?"
+      ],
+      "match_keywords": [
+        "garbage collection",
+        "java"
+      ],
+      "criteria": [
+        {
+          "name": "automatic memory reclamation of unreachable objects",
+          "terms": [
+            "unreachable",
+            "no longer referenced",
+            "no references",
+            "not referenced",
+            "automatically",
+            "reclaim",
+            "frees memory",
+            "free memory",
+            "automatic memory"
+          ],
+          "followup": "What makes an object eligible for garbage collection?"
+        },
+        {
+          "name": "heap and reachability from GC roots",
+          "terms": [
+            "heap",
+            "gc roots",
+            "reachable",
+            "reachability",
+            "roots",
+            "mark"
+          ],
+          "followup": "Where are objects stored, and how does the collector decide what is still in use?"
+        },
+        {
+          "name": "generational collection (young / old)",
+          "terms": [
+            "generation",
+            "generational",
+            "young generation",
+            "old generation",
+            "eden",
+            "survivor",
+            "minor gc",
+            "major gc",
+            "tenured"
+          ],
+          "followup": "Why do many collectors treat young and old objects differently?"
+        },
+        {
+          "name": "mark-and-sweep / compaction idea",
+          "terms": [
+            "mark and sweep",
+            "mark-and-sweep",
+            "sweep",
+            "compaction",
+            "compact",
+            "copying"
+          ]
+        },
+        {
+          "name": "pauses / tuning trade-off",
+          "terms": [
+            "stop the world",
+            "stop-the-world",
+            "pause",
+            "pauses",
+            "latency",
+            "throughput",
+            "tuning",
+            "g1",
+            "zgc"
+          ],
+          "followup": "What is a stop-the-world pause and why can it matter?"
+        }
+      ],
+      "model_answer": "The JVM manages memory automatically: objects live on the heap, and the garbage collector finds objects that are no longer reachable from GC roots (such as thread stacks and static fields) and reclaims their memory. Most collectors are generational: new objects start in a young generation that is collected often and cheaply, and survivors are promoted to an old generation collected less often. Algorithms use marking, sweeping, copying and compaction. Collection may pause application threads (stop-the-world), so collectors trade throughput against pause time."
+    },
+    {
+      "id": "python_list_vs_tuple",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between a list and a tuple in Python?"
+      ],
+      "match_keywords": [
+        "list",
+        "tuple"
+      ],
+      "criteria": [
+        {
+          "name": "lists are mutable",
+          "terms": [
+            "mutable",
+            "can be changed",
+            "can change",
+            "modify",
+            "append",
+            "add elements",
+            "remove elements",
+            "can be modified"
+          ],
+          "followup": "Which list operations change it in place?"
+        },
+        {
+          "name": "tuples are immutable",
+          "terms": [
+            "immutable",
+            "cannot be changed",
+            "can't be changed",
+            "cannot be modified",
+            "can't be modified",
+            "fixed",
+            "unchangeable"
+          ],
+          "followup": "What happens if you try to assign to a tuple element?"
+        },
+        {
+          "name": "tuples can be dictionary keys / hashable",
+          "terms": [
+            "hashable",
+            "dictionary key",
+            "dict key",
+            "as a key",
+            "set element",
+            "used as keys"
+          ],
+          "followup": "Why can a tuple be a dictionary key but a list cannot?"
+        },
+        {
+          "name": "syntax: [] versus ()",
+          "terms": [
+            "square brackets",
+            "parentheses",
+            "round brackets",
+            "[]",
+            "()"
+          ]
+        },
+        {
+          "name": "typical use and slight performance/memory edge",
+          "terms": [
+            "faster",
+            "less memory",
+            "memory",
+            "fixed collection",
+            "heterogeneous",
+            "records",
+            "collection of items",
+            "coordinates",
+            "return multiple"
+          ],
+          "followup": "When would you choose a tuple over a list?"
+        }
+      ],
+      "model_answer": "A list is a mutable sequence written with square brackets: you can append, remove and change elements. A tuple is an immutable sequence written with parentheses; once created it cannot be modified. Because tuples are immutable and hashable (if their contents are), they can be dictionary keys or set members, and they are a good fit for fixed records such as coordinates or multiple return values, usually with slightly less memory overhead than a list."
+    },
+    {
+      "id": "python_decorators",
+      "kind": "concept",
+      "questions": [
+        "What are Python decorators and when would you use one?"
+      ],
+      "match_keywords": [
+        "decorator",
+        "decorators",
+        "python"
+      ],
+      "criteria": [
+        {
+          "name": "a function that wraps another function",
+          "terms": [
+            "wraps",
+            "wrapper",
+            "takes a function",
+            "function that takes",
+            "higher-order",
+            "higher order",
+            "modifies a function",
+            "wraps another"
+          ],
+          "followup": "What does a decorator receive and what does it return?"
+        },
+        {
+          "name": "adds behaviour without changing the original code",
+          "terms": [
+            "without changing",
+            "without modifying",
+            "add behavior",
+            "add behaviour",
+            "extend",
+            "extra functionality",
+            "adds functionality",
+            "modify behavior"
+          ]
+        },
+        {
+          "name": "the @ syntax",
+          "terms": [
+            "@",
+            "syntax sugar",
+            "@decorator",
+            "at symbol",
+            "at sign"
+          ],
+          "followup": "What does writing @name above a function do?"
+        },
+        {
+          "name": "common use cases (logging, timing, auth, caching)",
+          "terms": [
+            "logging",
+            "timing",
+            "authentication",
+            "authorization",
+            "caching",
+            "memoization",
+            "retry",
+            "access control",
+            "validation",
+            "timer"
+          ],
+          "followup": "Name a real task where a decorator would help."
+        },
+        {
+          "name": "functools.wraps / preserving metadata, or closures",
+          "terms": [
+            "functools",
+            "wraps",
+            "metadata",
+            "closure",
+            "args and kwargs",
+            "*args",
+            "**kwargs"
+          ]
+        }
+      ],
+      "model_answer": "A decorator is a function that takes another function, wraps it with extra behaviour, and returns the wrapped version, so you can add behaviour without editing the original function. The @name syntax above a function is shorthand for func = name(func). Typical uses are logging, timing, caching/memoization, authentication and input validation. A good decorator uses *args and **kwargs to accept any arguments and functools.wraps to preserve the original function's name and docstring."
+    },
+    {
+      "id": "js_closures",
+      "kind": "concept",
+      "questions": [
+        "What is a closure in JavaScript, and when is it useful?"
+      ],
+      "match_keywords": [
+        "closure",
+        "javascript"
+      ],
+      "criteria": [
+        {
+          "name": "function remembers variables from its outer scope",
+          "terms": [
+            "outer scope",
+            "outer function",
+            "enclosing",
+            "lexical scope",
+            "remembers",
+            "retains access",
+            "has access to",
+            "surrounding"
+          ],
+          "followup": "Which variables can an inner function still see after the outer function has returned?"
+        },
+        {
+          "name": "works even after the outer function returned",
+          "terms": [
+            "after the outer",
+            "after it returns",
+            "even after",
+            "still has access",
+            "has finished",
+            "returned"
+          ]
+        },
+        {
+          "name": "data privacy / encapsulation",
+          "terms": [
+            "private",
+            "privacy",
+            "encapsulat",
+            "hide",
+            "hidden state",
+            "data hiding"
+          ],
+          "followup": "How can a closure keep a variable private?"
+        },
+        {
+          "name": "common uses: counters, callbacks, factories, currying",
+          "terms": [
+            "counter",
+            "callback",
+            "callbacks",
+            "factory",
+            "currying",
+            "event handler",
+            "memoize",
+            "memoization",
+            "partial application",
+            "module pattern"
+          ],
+          "followup": "Give an example such as a counter that uses a closure."
+        },
+        {
+          "name": "pitfall: loops with var / memory",
+          "terms": [
+            "var in a loop",
+            "loop",
+            "let",
+            "memory leak",
+            "memory"
+          ]
+        }
+      ],
+      "model_answer": "A closure is a function bundled with the variables of the lexical scope where it was created, so the inner function can keep using those variables even after the outer function has returned. This lets you keep state private (for example a counter whose value can only be changed through the returned functions) and is the basis of callbacks, function factories, currying and the module pattern. A classic pitfall is closing over a var in a loop; let gives each iteration its own binding."
+    },
+    {
+      "id": "js_event_loop",
+      "kind": "concept",
+      "questions": [
+        "How does the JavaScript event loop work?"
+      ],
+      "match_keywords": [
+        "event loop"
+      ],
+      "criteria": [
+        {
+          "name": "single-threaded with a call stack",
+          "terms": [
+            "single-threaded",
+            "single threaded",
+            "one thread",
+            "call stack",
+            "stack"
+          ],
+          "followup": "What happens when a function is called, and when does it leave the call stack?"
+        },
+        {
+          "name": "asynchronous work handed off to the environment (Web APIs / libuv)",
+          "terms": [
+            "web api",
+            "web apis",
+            "libuv",
+            "timers",
+            "background",
+            "browser",
+            "node api",
+            "outside the stack",
+            "runtime"
+          ]
+        },
+        {
+          "name": "callback / task queue",
+          "terms": [
+            "callback queue",
+            "task queue",
+            "macrotask",
+            "message queue",
+            "event queue",
+            "queue"
+          ],
+          "followup": "Where do finished callbacks wait?"
+        },
+        {
+          "name": "microtasks (promises) run before the next task",
+          "terms": [
+            "microtask",
+            "microtasks",
+            "promise",
+            "promises",
+            "async/await",
+            "process.nextTick"
+          ],
+          "followup": "Which runs first: a promise callback or a setTimeout callback?"
+        },
+        {
+          "name": "loop moves tasks onto the stack only when it is empty",
+          "terms": [
+            "stack is empty",
+            "empty stack",
+            "when the stack",
+            "checks",
+            "continuously",
+            "picks",
+            "pushes",
+            "moves"
+          ],
+          "followup": "Why can a long synchronous loop freeze the page?"
+        }
+      ],
+      "model_answer": "JavaScript runs on a single thread with one call stack. Asynchronous operations such as timers, network requests and I/O are handled outside the stack by the runtime (browser Web APIs or Node's libuv). When they finish, their callbacks are placed in a task queue; promise callbacks go to the microtask queue. The event loop repeatedly checks whether the call stack is empty and, if so, runs all pending microtasks and then the next task from the queue. A long synchronous operation blocks the loop, which is why it can freeze a page."
+    },
+    {
+      "id": "react_state_props",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between state and props in React?"
+      ],
+      "match_keywords": [
+        "state",
+        "props",
+        "react"
+      ],
+      "criteria": [
+        {
+          "name": "props are passed from parent to child",
+          "terms": [
+            "passed from",
+            "parent",
+            "from the parent",
+            "passed down",
+            "passed in",
+            "arguments",
+            "inputs to a component"
+          ],
+          "followup": "Who owns props, the parent or the child?"
+        },
+        {
+          "name": "props are read-only in the receiving component",
+          "terms": [
+            "read-only",
+            "read only",
+            "immutable",
+            "cannot be modified",
+            "can't be modified",
+            "should not be modified",
+            "not change them"
+          ]
+        },
+        {
+          "name": "state is data owned and managed by the component",
+          "terms": [
+            "internal",
+            "owned by",
+            "managed by the component",
+            "component's own",
+            "local",
+            "usestate",
+            "private to",
+            "component state"
+          ],
+          "followup": "How does a function component create state?"
+        },
+        {
+          "name": "changing state triggers a re-render",
+          "terms": [
+            "re-render",
+            "rerender",
+            "re-renders",
+            "triggers",
+            "update the ui",
+            "updates the ui",
+            "setstate",
+            "setter"
+          ],
+          "followup": "What happens to the UI when you update state?"
+        },
+        {
+          "name": "lifting state up / data flows down",
+          "terms": [
+            "lifting state",
+            "lift state",
+            "one-way",
+            "unidirectional",
+            "data flows down",
+            "callback prop",
+            "pass a function"
+          ]
+        }
+      ],
+      "model_answer": "Props are inputs passed from a parent component to a child; the child treats them as read-only. State is data owned and managed inside a component (for example with useState); when state changes React re-renders the component. Data flows one way, down from parent to child via props; when a child needs to change something, the parent passes a callback prop, or the shared state is lifted up to a common parent."
+    },
+    {
+      "id": "react_rerender",
+      "kind": "concept",
+      "questions": [
+        "When does a React component re-render, and how can you avoid unnecessary re-renders?"
+      ],
+      "match_keywords": [
+        "re-render",
+        "rerender",
+        "react"
+      ],
+      "criteria": [
+        {
+          "name": "re-renders when state or props change",
+          "terms": [
+            "state changes",
+            "props change",
+            "state or props",
+            "setstate",
+            "state update",
+            "new props",
+            "parent re-renders",
+            "parent renders"
+          ],
+          "followup": "What are the usual triggers for a re-render?"
+        },
+        {
+          "name": "a parent re-render re-renders its children by default",
+          "terms": [
+            "children",
+            "child components",
+            "parent re-renders",
+            "parent renders",
+            "by default"
+          ]
+        },
+        {
+          "name": "React.memo to skip re-rendering unchanged props",
+          "terms": [
+            "react.memo",
+            "memo",
+            "pure component",
+            "purecomponent",
+            "shouldcomponentupdate"
+          ],
+          "followup": "What does React.memo compare?"
+        },
+        {
+          "name": "useMemo / useCallback to keep values and functions stable",
+          "terms": [
+            "usememo",
+            "usecallback",
+            "memoize",
+            "memoise",
+            "stable reference",
+            "same reference",
+            "referential"
+          ],
+          "followup": "Why can a new function or object on every render defeat memoization?"
+        },
+        {
+          "name": "keys / state placement / measure first",
+          "terms": [
+            "key",
+            "keys",
+            "colocate",
+            "move state down",
+            "state placement",
+            "profiler",
+            "devtools",
+            "measure",
+            "premature"
+          ]
+        }
+      ],
+      "model_answer": "A component re-renders when its state changes, when its props change, or when its parent re-renders (children re-render by default). To avoid unnecessary work: wrap components in React.memo so they are skipped when their props are unchanged, keep object and function props referentially stable with useMemo and useCallback, move state down so fewer components depend on it, and use stable keys in lists. Measure with the React Profiler first, because premature memoization adds complexity."
+    },
+    {
+      "id": "node_nonblocking",
+      "kind": "concept",
+      "questions": [
+        "What does it mean that Node.js is single-threaded and non-blocking?"
+      ],
+      "match_keywords": [
+        "node.js",
+        "non-blocking",
+        "single-threaded"
+      ],
+      "criteria": [
+        {
+          "name": "one main thread runs JavaScript",
+          "terms": [
+            "single thread",
+            "single-threaded",
+            "single threaded",
+            "one thread",
+            "main thread"
+          ],
+          "followup": "How many threads execute your JavaScript code?"
+        },
+        {
+          "name": "non-blocking asynchronous I/O",
+          "terms": [
+            "non-blocking",
+            "non blocking",
+            "asynchronous",
+            "async",
+            "does not wait",
+            "doesn't wait",
+            "callbacks",
+            "promises"
+          ],
+          "followup": "What happens while Node is waiting for a database or file response?"
+        },
+        {
+          "name": "event loop dispatches completed operations",
+          "terms": [
+            "event loop",
+            "event-driven",
+            "event driven",
+            "events"
+          ]
+        },
+        {
+          "name": "libuv / thread pool does the heavy I/O work",
+          "terms": [
+            "libuv",
+            "thread pool",
+            "worker threads",
+            "background threads",
+            "os kernel",
+            "operating system"
+          ]
+        },
+        {
+          "name": "CPU-heavy work blocks it; offload it",
+          "terms": [
+            "cpu-intensive",
+            "cpu intensive",
+            "cpu-bound",
+            "cpu bound",
+            "heavy computation",
+            "blocks the event loop",
+            "worker threads",
+            "child process",
+            "cluster"
+          ],
+          "followup": "What kind of work should not run on the main thread?"
+        }
+      ],
+      "model_answer": "Node runs your JavaScript on a single main thread, but it does not wait for slow operations such as disk or network I/O: it starts them asynchronously (using the OS and libuv's thread pool underneath) and the event loop runs your callback or promise continuation when they complete. That lets one process serve many concurrent connections. The drawback is that CPU-heavy synchronous code blocks the loop, so such work should be offloaded to worker threads, child processes or another service."
+    },
+    {
+      "id": "sql_joins",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between an INNER JOIN and a LEFT JOIN?"
+      ],
+      "match_keywords": [
+        "inner join",
+        "left join",
+        "join"
+      ],
+      "criteria": [
+        {
+          "name": "INNER JOIN returns only matching rows",
+          "terms": [
+            "only matching",
+            "only the matching",
+            "matching rows",
+            "both tables",
+            "intersection",
+            "matches in both",
+            "only rows that match"
+          ],
+          "followup": "What happens to a row that has no match in the other table?"
+        },
+        {
+          "name": "LEFT JOIN keeps all rows from the left table",
+          "terms": [
+            "all rows from the left",
+            "all the rows from the left",
+            "every row from the left",
+            "all records from the left",
+            "left table"
+          ],
+          "followup": "Which table's rows are always kept in a LEFT JOIN?"
+        },
+        {
+          "name": "unmatched right-side columns are NULL",
+          "terms": [
+            "null",
+            "nulls",
+            "no match",
+            "missing values",
+            "empty"
+          ],
+          "followup": "What value do the right-table columns have when there is no match?"
+        },
+        {
+          "name": "join condition (ON)",
+          "terms": [
+            "on clause",
+            "join condition",
+            "on a.",
+            "on t",
+            "foreign key",
+            "common column",
+            "matching column",
+            "key column",
+            "using"
+          ]
+        },
+        {
+          "name": "example or use case (find rows with no match)",
+          "terms": [
+            "is null",
+            "customers without",
+            "without orders",
+            "no orders",
+            "for example",
+            "e.g.",
+            "example"
+          ]
+        }
+      ],
+      "model_answer": "An INNER JOIN returns only the rows that have a match in both tables according to the join condition. A LEFT JOIN returns every row from the left table and the matching rows from the right; where there is no match, the right table's columns are NULL. LEFT JOIN is therefore useful for questions like 'customers who have no orders' (filter WHERE the right key IS NULL), while INNER JOIN drops rows that do not match."
+    },
+    {
+      "id": "db_index",
+      "kind": "concept",
+      "questions": [
+        "What is a database index, and what is the trade-off of adding one?"
+      ],
+      "match_keywords": [
+        "index",
+        "database"
+      ],
+      "criteria": [
+        {
+          "name": "speeds up lookups and searches",
+          "terms": [
+            "faster",
+            "speed up",
+            "speeds up",
+            "quickly",
+            "lookup",
+            "lookups",
+            "search",
+            "avoid scanning",
+            "avoids scanning",
+            "full table scan",
+            "table scan"
+          ],
+          "followup": "What does the database do without an index on a large table?"
+        },
+        {
+          "name": "data structure: B-tree / hash",
+          "terms": [
+            "b-tree",
+            "b tree",
+            "btree",
+            "tree",
+            "hash index",
+            "sorted structure",
+            "balanced"
+          ]
+        },
+        {
+          "name": "costs: slower writes",
+          "terms": [
+            "slower writes",
+            "slows down writes",
+            "slow down inserts",
+            "inserts",
+            "updates",
+            "deletes",
+            "write overhead",
+            "maintain the index",
+            "maintained"
+          ],
+          "followup": "Why does an index make inserts and updates slower?"
+        },
+        {
+          "name": "costs: extra storage",
+          "terms": [
+            "storage",
+            "disk space",
+            "space",
+            "memory",
+            "extra space"
+          ]
+        },
+        {
+          "name": "choosing columns: where/join/order by, selectivity",
+          "terms": [
+            "where",
+            "join",
+            "order by",
+            "selective",
+            "selectivity",
+            "frequently queried",
+            "columns that are",
+            "composite",
+            "primary key",
+            "unique"
+          ],
+          "followup": "Which columns are good candidates for an index?"
+        }
+      ],
+      "model_answer": "An index is an additional data structure (commonly a B-tree) that lets the database find rows by a column's value without scanning the whole table, which makes lookups, joins and sorting on that column much faster. The trade-off is that every insert, update and delete must also maintain the index, so writes get slower, and indexes use extra storage. Index columns that are frequently used in WHERE, JOIN and ORDER BY clauses and are selective; avoid indexing everything."
+    },
+    {
+      "id": "mongodb_vs_relational",
+      "kind": "concept",
+      "questions": [
+        "When would you choose a document database like MongoDB over a relational database?"
+      ],
+      "match_keywords": [
+        "mongodb",
+        "document database",
+        "relational"
+      ],
+      "criteria": [
+        {
+          "name": "flexible or evolving schema",
+          "terms": [
+            "flexible schema",
+            "schema-less",
+            "schemaless",
+            "dynamic schema",
+            "evolving",
+            "changing schema",
+            "no fixed schema",
+            "schema flexibility"
+          ],
+          "followup": "What kind of data changes shape often?"
+        },
+        {
+          "name": "data is naturally nested / document-shaped",
+          "terms": [
+            "json",
+            "nested",
+            "documents",
+            "embedded",
+            "hierarchical",
+            "document-shaped",
+            "denormalized",
+            "denormalised"
+          ],
+          "followup": "What does a document look like compared with several joined rows?"
+        },
+        {
+          "name": "horizontal scaling / sharding",
+          "terms": [
+            "horizontal",
+            "sharding",
+            "scale out",
+            "scale-out",
+            "distributed",
+            "replica",
+            "replication",
+            "scalab"
+          ]
+        },
+        {
+          "name": "trade-offs: joins, transactions, consistency",
+          "terms": [
+            "joins",
+            "transactions",
+            "acid",
+            "consistency",
+            "relationships",
+            "normalization",
+            "integrity",
+            "less suited"
+          ],
+          "followup": "What do relational databases do better?"
+        },
+        {
+          "name": "example use case",
+          "terms": [
+            "catalog",
+            "content management",
+            "logs",
+            "iot",
+            "real-time",
+            "user profiles",
+            "prototype",
+            "for example",
+            "e.g."
+          ]
+        }
+      ],
+      "model_answer": "Choose a document database when your data is naturally document-shaped (nested JSON-like records), the schema changes often, or you need to scale out horizontally with sharding and replication. Typical examples are product catalogs, content, user profiles and event logs. A relational database is usually better when data is highly relational, you need multi-row ACID transactions, strong integrity constraints and complex joins. The decision should follow the access patterns and consistency needs, not fashion."
+    },
+    {
+      "id": "docker_image_vs_container",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between a Docker image and a container?"
+      ],
+      "match_keywords": [
+        "docker",
+        "image",
+        "container"
+      ],
+      "criteria": [
+        {
+          "name": "image: read-only template with the app and dependencies",
+          "terms": [
+            "template",
+            "read-only",
+            "read only",
+            "blueprint",
+            "snapshot",
+            "packaged",
+            "dockerfile",
+            "layers",
+            "built from"
+          ],
+          "followup": "What is an image built from?"
+        },
+        {
+          "name": "container: running instance of an image",
+          "terms": [
+            "running instance",
+            "instance of an image",
+            "runs from an image",
+            "started from",
+            "running process",
+            "executing",
+            "runtime instance"
+          ],
+          "followup": "What do you do to an image to get a container?"
+        },
+        {
+          "name": "many containers from one image",
+          "terms": [
+            "multiple containers",
+            "many containers",
+            "same image",
+            "several containers"
+          ]
+        },
+        {
+          "name": "container has a writable layer / is isolated and ephemeral",
+          "terms": [
+            "writable layer",
+            "isolated",
+            "isolation",
+            "ephemeral",
+            "namespaces",
+            "cgroups",
+            "stateless",
+            "volume",
+            "volumes"
+          ],
+          "followup": "What happens to data written inside a container when it is removed?"
+        },
+        {
+          "name": "analogy or commands (build, run)",
+          "terms": [
+            "docker build",
+            "docker run",
+            "class and object",
+            "class",
+            "object",
+            "analogy",
+            "recipe"
+          ]
+        }
+      ],
+      "model_answer": "A Docker image is a read-only template, built from a Dockerfile in layers, that packages an application with its dependencies. A container is a running (or stopped) instance of an image: Docker adds a thin writable layer and runs it as an isolated process. You can start many containers from one image. Data written inside a container is lost when it is removed unless you use volumes. An image is like a class; a container is like an object created from it."
+    },
+    {
+      "id": "cpp_pointer_vs_reference",
+      "kind": "concept",
+      "questions": [
+        "What is the difference between a pointer and a reference in C++?"
+      ],
+      "match_keywords": [
+        "pointer",
+        "reference",
+        "c++"
+      ],
+      "criteria": [
+        {
+          "name": "pointer stores an address",
+          "terms": [
+            "stores an address",
+            "memory address",
+            "address of",
+            "holds the address",
+            "points to",
+            "address"
+          ],
+          "followup": "What does a pointer variable actually contain?"
+        },
+        {
+          "name": "reference is an alias of an existing variable",
+          "terms": [
+            "alias",
+            "another name",
+            "refers to",
+            "bound to",
+            "same variable",
+            "alternative name"
+          ],
+          "followup": "Is a reference a separate object from the variable it refers to?"
+        },
+        {
+          "name": "pointers can be null and reassigned; references cannot",
+          "terms": [
+            "null",
+            "nullptr",
+            "reassign",
+            "reassigned",
+            "can be changed to point",
+            "cannot be reseated",
+            "cannot be reassigned",
+            "must be initialized",
+            "must be initialised",
+            "always valid"
+          ],
+          "followup": "Can you make a reference refer to a different variable later?"
+        },
+        {
+          "name": "syntax: * and -> versus &",
+          "terms": [
+            "dereference",
+            "*",
+            "->",
+            "&",
+            "arrow"
+          ]
+        },
+        {
+          "name": "when to use which (pass by reference, dynamic memory, arrays)",
+          "terms": [
+            "pass by reference",
+            "function parameter",
+            "dynamic memory",
+            "new",
+            "arrays",
+            "optional",
+            "avoid copying",
+            "const reference"
+          ],
+          "followup": "Why is passing a large object by const reference useful?"
+        }
+      ],
+      "model_answer": "A pointer is a variable that stores a memory address; it can be null, can be reassigned to point elsewhere, and is dereferenced with * (or ->). A reference is an alias for an existing variable: it must be initialized when declared, cannot be null in valid code, and cannot be reseated to refer to something else. Use references for function parameters to avoid copies (const T& for large read-only objects) and pointers when you need optional values, reassignment or dynamic memory management."
+    },
+    {
+      "id": "spring_autoconfig",
+      "kind": "concept",
+      "questions": [
+        "What does Spring Boot's auto-configuration do?"
+      ],
+      "match_keywords": [
+        "spring boot",
+        "auto-configuration",
+        "autoconfiguration"
+      ],
+      "criteria": [
+        {
+          "name": "configures beans automatically from the classpath",
+          "terms": [
+            "classpath",
+            "automatically configures",
+            "automatically configure",
+            "detects",
+            "based on the dependencies",
+            "based on dependencies",
+            "jar files",
+            "starter dependencies"
+          ],
+          "followup": "What does Spring Boot look at to decide what to configure?"
+        },
+        {
+          "name": "reduces boilerplate / manual configuration",
+          "terms": [
+            "boilerplate",
+            "less configuration",
+            "no xml",
+            "reduces configuration",
+            "sensible defaults",
+            "defaults",
+            "convention over configuration",
+            "opinionated"
+          ]
+        },
+        {
+          "name": "@EnableAutoConfiguration / @SpringBootApplication",
+          "terms": [
+            "enableautoconfiguration",
+            "springbootapplication",
+            "@springbootapplication",
+            "@enableautoconfiguration",
+            "component scan"
+          ],
+          "followup": "Which annotation turns it on?"
+        },
+        {
+          "name": "conditional on classes/properties and can be overridden",
+          "terms": [
+            "conditional",
+            "conditionalonclass",
+            "conditionalonmissingbean",
+            "override",
+            "overridden",
+            "your own bean",
+            "application.properties",
+            "application.yml",
+            "properties",
+            "exclude"
+          ],
+          "followup": "How can you override or turn off an auto-configured bean?"
+        },
+        {
+          "name": "starters example (web, data JPA)",
+          "terms": [
+            "starter",
+            "starters",
+            "spring-boot-starter",
+            "data jpa",
+            "embedded tomcat",
+            "datasource",
+            "for example",
+            "e.g."
+          ]
+        }
+      ],
+      "model_answer": "Auto-configuration lets Spring Boot create and configure beans automatically based on what is on the classpath, the properties you set, and the beans you have already defined. For example, with the web starter it sets up an embedded Tomcat and Spring MVC, and with a JPA starter and a database driver it configures a DataSource and EntityManager. It is enabled by @SpringBootApplication (which includes @EnableAutoConfiguration), uses conditional annotations so your own beans take precedence, and can be tuned in application.properties or excluded."
+    },
+    {
+      "id": "rest_http_methods",
+      "kind": "concept",
+      "questions": [
+        "What makes an API RESTful, and what do the common HTTP methods mean?"
+      ],
+      "match_keywords": [
+        "restful",
+        "http methods",
+        "rest"
+      ],
+      "criteria": [
+        {
+          "name": "resources identified by URLs/URIs",
+          "terms": [
+            "resource",
+            "resources",
+            "url",
+            "uri",
+            "endpoint",
+            "noun"
+          ],
+          "followup": "What does a URL identify in a REST API?"
+        },
+        {
+          "name": "standard HTTP methods: GET, POST, PUT/PATCH, DELETE",
+          "terms": [
+            "get",
+            "post",
+            "put",
+            "patch",
+            "delete"
+          ],
+          "followup": "Which method would you use to create a resource, and which to read one?"
+        },
+        {
+          "name": "GET is safe/idempotent; PUT and DELETE idempotent",
+          "terms": [
+            "idempotent",
+            "safe",
+            "does not change",
+            "no side effects",
+            "same result"
+          ],
+          "followup": "What does idempotent mean for PUT?"
+        },
+        {
+          "name": "stateless requests",
+          "terms": [
+            "stateless",
+            "no session",
+            "each request",
+            "self-contained",
+            "does not store client"
+          ]
+        },
+        {
+          "name": "status codes and representations (JSON)",
+          "terms": [
+            "status code",
+            "status codes",
+            "200",
+            "201",
+            "204",
+            "400",
+            "404",
+            "500",
+            "json",
+            "representation"
+          ],
+          "followup": "Name two status codes and when you would return them."
+        }
+      ],
+      "model_answer": "A RESTful API models things as resources identified by URLs and uses the standard HTTP methods on them: GET reads (safe, no side effects), POST creates, PUT replaces and PATCH partially updates (PUT and DELETE are idempotent: repeating them has the same effect), DELETE removes. Each request is stateless and carries everything the server needs. Responses use meaningful status codes (200, 201, 204, 400, 404, 500) and a representation such as JSON."
+    },
+    {
+      "id": "hash_collisions",
+      "kind": "concept",
+      "questions": [
+        "How does a hash table handle collisions?"
+      ],
+      "match_keywords": [
+        "hash table",
+        "collision",
+        "collisions"
+      ],
+      "criteria": [
+        {
+          "name": "a collision: two keys map to the same bucket/index",
+          "terms": [
+            "same index",
+            "same bucket",
+            "same slot",
+            "two keys",
+            "different keys",
+            "map to the same",
+            "hash to the same"
+          ],
+          "followup": "Why are collisions unavoidable?"
+        },
+        {
+          "name": "chaining: linked list/bucket per slot",
+          "terms": [
+            "chaining",
+            "linked list",
+            "separate chaining",
+            "list in each",
+            "bucket"
+          ],
+          "followup": "How does chaining store two keys in the same slot?"
+        },
+        {
+          "name": "open addressing: probe for another slot",
+          "terms": [
+            "open addressing",
+            "probing",
+            "linear probing",
+            "quadratic probing",
+            "double hashing",
+            "next free slot",
+            "find another slot"
+          ],
+          "followup": "How does linear probing find a slot?"
+        },
+        {
+          "name": "load factor and resizing/rehashing",
+          "terms": [
+            "load factor",
+            "resize",
+            "resizing",
+            "rehash",
+            "rehashing",
+            "grow the table",
+            "expand"
+          ],
+          "followup": "What happens when the table gets too full?"
+        },
+        {
+          "name": "average O(1), worst case O(n); good hash function",
+          "terms": [
+            "o(1)",
+            "constant time",
+            "o(n)",
+            "worst case",
+            "good hash function",
+            "uniform",
+            "distribute"
+          ]
+        }
+      ],
+      "model_answer": "A collision happens when two different keys hash to the same index. Separate chaining stores all colliding entries in a list (or tree) at that bucket; open addressing probes for another free slot using linear probing, quadratic probing or double hashing. A good hash function spreads keys evenly, and the table is resized (rehashed) when the load factor gets too high. Operations are O(1) on average and degrade toward O(n) in the worst case."
+    },
+    {
+      "id": "stack_vs_queue",
+      "kind": "concept",
+      "questions": [
+        "When would you use a stack versus a queue?"
+      ],
+      "match_keywords": [
+        "stack",
+        "queue"
+      ],
+      "criteria": [
+        {
+          "name": "stack is LIFO",
+          "terms": [
+            "lifo",
+            "last in first out",
+            "last-in first-out",
+            "last in, first out",
+            "top of the stack",
+            "push",
+            "pop"
+          ],
+          "followup": "Which element comes out first in a stack?"
+        },
+        {
+          "name": "queue is FIFO",
+          "terms": [
+            "fifo",
+            "first in first out",
+            "first-in first-out",
+            "first in, first out",
+            "enqueue",
+            "dequeue",
+            "front",
+            "rear"
+          ],
+          "followup": "Which element comes out first in a queue?"
+        },
+        {
+          "name": "stack use cases (undo, recursion/call stack, parsing, DFS)",
+          "terms": [
+            "undo",
+            "call stack",
+            "recursion",
+            "backtracking",
+            "parentheses",
+            "brackets",
+            "expression",
+            "dfs",
+            "depth-first",
+            "depth first",
+            "browser back"
+          ],
+          "followup": "Name a problem where a stack is the natural tool."
+        },
+        {
+          "name": "queue use cases (scheduling, BFS, buffering, order)",
+          "terms": [
+            "scheduling",
+            "bfs",
+            "breadth-first",
+            "breadth first",
+            "buffer",
+            "buffering",
+            "print queue",
+            "task queue",
+            "in order of arrival",
+            "message queue",
+            "level order"
+          ],
+          "followup": "Name a problem where a queue is the natural tool."
+        },
+        {
+          "name": "O(1) operations",
+          "terms": [
+            "o(1)",
+            "constant time"
+          ]
+        }
+      ],
+      "model_answer": "A stack is last-in, first-out (push and pop at the top): use it for undo, matching brackets and parsing expressions, backtracking, the call stack and depth-first search. A queue is first-in, first-out (enqueue at the back, dequeue from the front): use it for processing work in order of arrival such as scheduling, buffering, message queues and breadth-first search. Both support their main operations in O(1)."
+    }
+  ]
+}

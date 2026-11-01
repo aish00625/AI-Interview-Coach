@@ -1,0 +1,25 @@
+{
+  "slug": "top-k-frequent-words",
+  "title": "Top K Frequent Words",
+  "topic": "Hashing",
+  "difficulty": "medium",
+  "description": "Given a list of words, find the k most frequent ones.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: n lowercase words separated by spaces.\n\nOutput format\nThe k most frequent distinct words, one per line, from most to least frequent. Words with the same frequency are ordered alphabetically.",
+  "constraints": "1 <= n <= 100000. 1 <= k <= number of distinct words. Each word has 1 to 20 lowercase letters.",
+  "hints": [
+    "How can you count how often each word occurs?",
+    "Use a dictionary of counts, then sort the distinct words by (-count, word).",
+    "If two words have equal counts the alphabetical order decides. Sorting by the pair (-count, word) handles both rules in one step."
+  ],
+  "examples": [
+    {
+      "input": "6 2\nthe day is sunny the the\n",
+      "output": "the\nday",
+      "explanation": "\"the\" appears 3 times, then every other word appears once; \"day\" is alphabetically first among those."
+    },
+    {
+      "input": "7 3\ni love code i love java python\n",
+      "output": "i\nlove\ncode",
+      "explanation": "\"i\" and \"love\" occur twice (alphabetical order i, love); then the one-count words start with \"code\"."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "valid-anagram",
+  "title": "Valid Anagram",
+  "topic": "Strings",
+  "difficulty": "easy",
+  "description": "Two words are anagrams if one can be rearranged into the other using every letter exactly once. Decide whether two given words are anagrams.\n\nInput format\nLine 1: the first word s.\nLine 2: the second word t.\nBoth consist of lowercase English letters.\n\nOutput format\nYES if t is an anagram of s, otherwise NO.",
+  "constraints": "1 <= length of s, t <= 100000.",
+  "hints": [
+    "If the two words have different lengths, can they be anagrams?",
+    "Count how many times each letter appears in each word. Anagrams have identical counts.",
+    "Comparing only which letters appear (as sets) is not enough: \"aab\" and \"abb\" use the same letters but different counts. Use a frequency array of size 26."
+  ],
+  "examples": [
+    {
+      "input": "listen\nsilent\n",
+      "output": "YES",
+      "explanation": "Both words contain the letters e, i, l, n, s, t once each."
+    },
+    {
+      "input": "rat\ncar\n",
+      "output": "NO",
+      "explanation": "The letters differ."
+    }
+  ]
+}

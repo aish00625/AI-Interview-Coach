@@ -1,0 +1,25 @@
+{
+  "slug": "shortest-path",
+  "title": "Cheapest Route",
+  "topic": "Graphs",
+  "difficulty": "hard",
+  "description": "A road network has n towns numbered 1 to n and m two-way roads. Each road connects two towns and has a positive travel cost. Find the minimum total cost to travel from town s to town t, or print -1 if t cannot be reached from s.\n\nInput format\nLine 1: n and m.\nNext m lines: three integers u, v, w describing a road between towns u and v with cost w.\nLast line: s and t.\n\nOutput format\nOne integer: the minimum total cost, or -1.",
+  "constraints": "1 <= n <= 100000, 0 <= m <= 200000, 1 <= w <= 1000000. There may be several roads between the same pair of towns. The answer fits in a 64-bit signed integer.",
+  "hints": [
+    "Counting roads (as breadth-first search does) is not enough because roads have different costs.",
+    "Dijkstra's algorithm: keep the best known distance to each town, and repeatedly settle the unsettled town with the smallest distance, relaxing its roads.",
+    "Use a min-heap of (distance, town). When you pop a pair whose distance is larger than the recorded best, skip it. Stop early when you pop t. Distances can exceed 32 bits, so use a 64-bit type in C++ and Java."
+  ],
+  "examples": [
+    {
+      "input": "4 4\n1 2 1\n2 3 2\n1 3 5\n3 4 1\n1 4\n",
+      "output": "4",
+      "explanation": "Route 1-2-3-4 costs 1 + 2 + 1 = 4, cheaper than 1-3-4 at 6."
+    },
+    {
+      "input": "3 1\n1 2 7\n1 3\n",
+      "output": "-1",
+      "explanation": "Town 3 has no roads, so it cannot be reached."
+    }
+  ]
+}

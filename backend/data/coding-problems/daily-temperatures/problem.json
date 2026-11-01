@@ -1,0 +1,25 @@
+{
+  "slug": "daily-temperatures",
+  "title": "Daily Temperatures",
+  "topic": "Stack",
+  "difficulty": "medium",
+  "description": "For each day, find how many days you have to wait until a warmer temperature. If there is no future day that is warmer, the answer for that day is 0.\n\nInput format\nLine 1: n.\nLine 2: n integers, the temperature of each day.\n\nOutput format\nn integers on one line, separated by single spaces.",
+  "constraints": "1 <= n <= 100000. 30 <= temperature <= 100.",
+  "hints": [
+    "A brute force compares each day with every later day. Which comparisons are wasted?",
+    "Scan days from left to right and keep a stack of days still waiting for a warmer day. A new temperature resolves every waiting day that was colder.",
+    "Keep indices on the stack; while the current temperature is strictly greater than the temperature at the top index, pop it and set its answer to current - popped index. Equal temperatures do not count as warmer."
+  ],
+  "examples": [
+    {
+      "input": "8\n73 74 75 71 69 72 76 73\n",
+      "output": "1 1 4 2 1 1 0 0",
+      "explanation": "Day 0 (73) waits 1 day for 74; day 2 (75) waits 4 days for 76; the last day never gets a warmer day."
+    },
+    {
+      "input": "3\n30 60 90\n",
+      "output": "1 1 0",
+      "explanation": "Each day is followed immediately by a warmer one, except the last."
+    }
+  ]
+}

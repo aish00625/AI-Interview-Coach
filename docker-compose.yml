@@ -1,0 +1,90 @@
+# DEVELOPMENT-ONLY Docker Compose: PostgreSQL + backend API + AI service. Nothing here is production-hardened.
+#
+#   cp .env.example .env        # then replace every change-me value
+#   docker compose up --build
+#
+# Run the React app on the host:  cd frontend && npm install && npm run dev
+#
+# STATUS: this file has NOT been run against a real Docker daemon by its author (the authoring sandbox has no Docker).
+# Treat it as a starting point and report problems; the Windows guide's primary path runs services natively.
+#
+# The code-executor is a separate OPT-IN profile because it must create sibling containers, which needs the host's
+# Docker socket. Mounting that socket gives the container root-equivalent control of the host: use it on a personal
+# development machine only, never on anything reachable from the internet. The executor's own per-submission
+# containers keep their restrictions (no network, all capabilities dropped, read-only root, tmpfs workspace, non-root
+# user, pid/memory/CPU limits) - nothing in this file weakens them.
+#   docker compose --profile executor up --build
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-ai_interview_coach}
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+      # Run once, on first start of an EMPTY volume: base schema then ordered migrations (file-name order).
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/000_schema.sql:ro
+      - ./database/migrations:/migrations:ro
+      - ./docker/db-init.sh:/docker-entrypoint-initdb.d/100_migrations.sh:ro
+    ports:
+      - "127.0.0.1:5432:5432"   # bound to localhost only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-ai_interview_coach}"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+
+  ai-service:
+    build: ./ai-service
+    environment:
+      AI_SERVICE_API_KEY: ${AI_SERVICE_API_KEY:?set AI_SERVICE_API_KEY in .env}
+      ALLOWED_ORIGINS: http://localhost:5173,http://localhost:5000
+      SPEECH_MODEL_SIZE: ${SPEECH_MODEL_SIZE:-small}
+      SPEECH_LANGUAGE: ${SPEECH_LANGUAGE:-en}
+    volumes:
+      # The Whisper model (about 460 MB for 'small') is downloaded once on first use and kept here between restarts.
+      - speech-models:/home/appuser/.cache
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      PORT: "5000"
+      DATABASE_URL: postgres://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-ai_interview_coach}
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+      FRONTEND_URL: http://localhost:5173
+      AI_SERVICE_URL: http://ai-service:8000
+      AI_SERVICE_API_KEY: ${AI_SERVICE_API_KEY}
+      CODE_EXECUTOR_URL: ${CODE_EXECUTOR_URL:-http://host.docker.internal:9000}
+      CODE_EXECUTOR_API_KEY: ${CODE_EXECUTOR_API_KEY:?set CODE_EXECUTOR_API_KEY in .env}
+      RESUME_STORAGE_DIR: /data/resumes
+      AI_SERVICE_SPEECH_TIMEOUT_MS: ${AI_SERVICE_SPEECH_TIMEOUT_MS:-120000}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - resumes:/data/resumes
+    ports:
+      - "127.0.0.1:5000:5000"
+
+  code-executor:
+    profiles: ["executor"]
+    build: ./code-executor
+    environment:
+      CODE_EXECUTOR_API_KEY: ${CODE_EXECUTOR_API_KEY:?set CODE_EXECUTOR_API_KEY in .env}
+      ALLOWED_ORIGINS: http://localhost:5000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock   # DEV ONLY - see the warning at the top of this file
+    ports:
+      - "127.0.0.1:9000:9000"
+
+volumes:
+  dbdata:
+  resumes:
+  speech-models:

@@ -1,0 +1,25 @@
+{
+  "slug": "generate-parentheses",
+  "title": "Generate Parentheses",
+  "topic": "Recursion",
+  "difficulty": "medium",
+  "description": "Given n pairs of parentheses, print every well-formed (balanced) combination.\n\nInput format\nLine 1: n.\n\nOutput format\nAll balanced strings of length 2n, one per line, in lexicographic (dictionary) order where \"(\" comes before \")\".",
+  "constraints": "1 <= n <= 8.",
+  "hints": [
+    "A string is balanced if no prefix has more \")\" than \"(\" and the totals are equal. Build the string one character at a time.",
+    "Use recursion with two counters: how many \"(\" and \")\" have been used. You may add \"(\" while open < n, and \")\" while close < open.",
+    "To get lexicographic order without sorting, always try \"(\" before \")\" at each step."
+  ],
+  "examples": [
+    {
+      "input": "3\n",
+      "output": "((()))\n(()())\n(())()\n()(())\n()()()",
+      "explanation": "Five balanced strings exist for n = 3, listed in dictionary order."
+    },
+    {
+      "input": "1\n",
+      "output": "()",
+      "explanation": "Only \"()\" is possible."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+ {
+  "input": "4\n1 2 3 4\n",
+  "expected_output": "24 12 8 6",
+  "is_hidden": false
+ },
+ {
+  "input": "4\n-1 1 0 -3\n",
+  "expected_output": "0 0 3 0",
+  "is_hidden": false
+ },
+ {
+  "input": "2\n5 7\n",
+  "expected_output": "7 5",
+  "is_hidden": false
+ },
+ {
+  "input": "3\n0 0 2\n",
+  "expected_output": "0 0 0",
+  "is_hidden": true
+ },
+ {
+  "input": "3\n2 0 3\n",
+  "expected_output": "0 6 0",
+  "is_hidden": true
+ },
+ {
+  "input": "5\n1 1 1 1 1\n",
+  "expected_output": "1 1 1 1 1",
+  "is_hidden": true
+ },
+ {
+  "input": "4\n-2 -3 4 5\n",
+  "expected_output": "-60 -40 30 24",
+  "is_hidden": true
+ },
+ {
+  "input": "6\n10 10 10 10 10 10\n",
+  "expected_output": "100000 100000 100000 100000 100000 100000",
+  "is_hidden": true
+ },
+ {
+  "input": "15\n9 7 3 8 7 5 8 4 -3 -10 9 -8 -7 -1 -7\n",
+  "expected_output": "19914854400 25604812800 59744563200 22404211200 25604812800 35846737920 22404211200 44808422400 -59744563200 -17923368960 19914854400 -22404211200 -25604812800 -179233689600 -25604812800",
+  "is_hidden": true
+ },
+ {
+  "input": "3\n0 4 5\n",
+  "expected_output": "20 0 0",
+  "is_hidden": true
+ },
+ {
+  "input": "15\n-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 -10 -9 -8 -7 -6\n",
+  "expected_output": "10973491200 12192768000 13716864000 15676416000 18289152000 21946982400 27433728000 36578304000 54867456000 109734912000 10973491200 12192768000 13716864000 15676416000 18289152000",
+  "is_hidden": true
+ }
+]

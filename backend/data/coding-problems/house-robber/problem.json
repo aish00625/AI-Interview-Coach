@@ -1,0 +1,25 @@
+{
+  "slug": "house-robber",
+  "title": "House Robber",
+  "topic": "Dynamic Programming",
+  "difficulty": "easy",
+  "description": "A row of houses each holds some money. You may not take from two neighbouring houses (an alarm would sound). Find the largest total amount you can take.\n\nInput format\nLine 1: n.\nLine 2: n non-negative integers, the money in each house.\n\nOutput format\nOne integer: the maximum amount.",
+  "constraints": "1 <= n <= 100000. 0 <= money <= 10000.",
+  "hints": [
+    "Look at the last house. Either you take it or you do not. What does each choice allow for the houses before it?",
+    "Let best[i] be the answer for the first i houses: best[i] = max(best[i-1], best[i-2] + money[i-1]).",
+    "Greedily taking every other house, or the larger of \"even positions\" and \"odd positions\", is not always optimal: sometimes you must skip two houses in a row."
+  ],
+  "examples": [
+    {
+      "input": "4\n1 2 3 1\n",
+      "output": "4",
+      "explanation": "Take houses 1 and 3 for 1 + 3 = 4."
+    },
+    {
+      "input": "5\n2 7 9 3 1\n",
+      "output": "12",
+      "explanation": "Take houses 1, 3 and 5 for 2 + 9 + 1 = 12."
+    }
+  ]
+}

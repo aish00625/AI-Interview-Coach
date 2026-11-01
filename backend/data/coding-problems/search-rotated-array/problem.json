@@ -1,0 +1,25 @@
+{
+  "slug": "search-rotated-array",
+  "title": "Search in a Rotated Sorted Array",
+  "topic": "Searching",
+  "difficulty": "medium",
+  "description": "A sorted array of distinct integers was rotated at an unknown pivot (for example 0 1 2 4 5 6 7 became 4 5 6 7 0 1 2). Find the index of a target value, or report that it is not present.\n\nInput format\nLine 1: n and target separated by a space.\nLine 2: the n integers of the rotated array.\n\nOutput format\nThe 0-based index of the target, or -1 if it is absent.",
+  "constraints": "1 <= n <= 100000. All values are distinct. Aim for O(log n).",
+  "hints": [
+    "After the rotation, one of the two halves around the middle element is always still sorted. How can you tell which?",
+    "Compare a[lo] with a[mid]. If a[lo] <= a[mid] the left half is sorted; otherwise the right half is sorted.",
+    "Check whether the target lies inside the sorted half (using its end values). If it does, search that half; otherwise search the other half."
+  ],
+  "examples": [
+    {
+      "input": "7 0\n4 5 6 7 0 1 2\n",
+      "output": "4",
+      "explanation": "0 is at index 4."
+    },
+    {
+      "input": "7 3\n4 5 6 7 0 1 2\n",
+      "output": "-1",
+      "explanation": "3 is not in the array."
+    }
+  ]
+}

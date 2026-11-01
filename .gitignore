@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------------------
+# Secrets and local configuration: NEVER commit. Each service ships a .env.example
+# with placeholder values instead (copy it to .env and fill it in locally).
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+*.credentials
+credentials.json
+
+# ---------------------------------------------------------------------------
+# Dependencies, virtual environments, caches and build output (recreated by setup)
+# ---------------------------------------------------------------------------
+node_modules/
+venv/
+venv-*/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+frontend/dist/
+dist/
+build/
+coverage/
+
+# ---------------------------------------------------------------------------
+# Personal and database data: never uploaded
+# ---------------------------------------------------------------------------
+backups/
+*.backup
+*.dump
+*.sql.gz
+backend/uploads/
+# read-only audit export of the live database (contains hidden coding tests)
+audit-export/
+audit.json
+frontend/audit.json
+
+# ---------------------------------------------------------------------------
+# Local working copies, assistant outputs and editor/OS files
+# ---------------------------------------------------------------------------
+Claude outputs/
+_pre-integration-backup-*/
+.claude/
+CHANGED_FILES.txt
+*.bak
+*.tmp
+*.log
+*.swp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

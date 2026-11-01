@@ -1,0 +1,25 @@
+{
+  "slug": "product-except-self",
+  "title": "Product of Array Except Self",
+  "topic": "Arrays",
+  "difficulty": "medium",
+  "description": "For each position i, output the product of every element of the array except the one at position i. Do it without dividing: the array may contain zeros.\n\nInput format\nLine 1: n.\nLine 2: n integers.\n\nOutput format\nn integers on one line, separated by single spaces; the i-th is the product of all elements except a[i].",
+  "constraints": "2 <= n <= 15. -10 <= a[i] <= 10, so every product fits in a 64-bit signed integer.",
+  "hints": [
+    "What would the answer be for position i if you only knew the product of everything to its left and everything to its right?",
+    "Build a prefix-product array (product of elements before i) and a suffix-product array (product of elements after i), then multiply them position by position.",
+    "Dividing the total product by a[i] breaks when a[i] is 0 (and loses the answer when there is exactly one zero). Use prefix * suffix instead."
+  ],
+  "examples": [
+    {
+      "input": "4\n1 2 3 4\n",
+      "output": "24 12 8 6",
+      "explanation": "For index 0 the product of 2*3*4 is 24, and so on."
+    },
+    {
+      "input": "4\n-1 1 0 -3\n",
+      "output": "0 0 3 0",
+      "explanation": "Only the position holding the single zero gets a non-zero product: (-1)*1*(-3) = 3."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "edit-distance",
+  "title": "Fewest Edits Between Words",
+  "topic": "Strings",
+  "difficulty": "hard",
+  "description": "The edit distance between two strings is the minimum number of single-character operations needed to turn the first string into the second. The allowed operations are: insert one character, delete one character, or replace one character with another.\n\nPrint the edit distance between the two given strings.\n\nInput format\nLine 1: the first string.\nLine 2: the second string.\n\nOutput format\nOne integer: the minimum number of operations.",
+  "constraints": "1 <= length of each string <= 2000. Both strings contain only lowercase letters a to z.",
+  "hints": [
+    "Think about the two strings one prefix at a time. Let d[i][j] be the edit distance between the first i characters of a and the first j characters of b.",
+    "If a[i] equals b[j] no operation is needed for that pair: d[i][j] = d[i-1][j-1]. Otherwise it is 1 plus the smallest of d[i-1][j-1] (replace), d[i-1][j] (delete) and d[i][j-1] (insert).",
+    "The base cases are d[i][0] = i and d[0][j] = j. A full table of 2001 x 2001 numbers is fine, or keep only the previous row to save memory."
+  ],
+  "examples": [
+    {
+      "input": "kitten\nsitting\n",
+      "output": "3",
+      "explanation": "kitten -> sitten (replace k) -> sittin (replace e) -> sitting (insert g)."
+    },
+    {
+      "input": "flaw\nlawn\n",
+      "output": "2",
+      "explanation": "Delete the f, then insert n at the end."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "knapsack-01",
+  "title": "0/1 Knapsack",
+  "topic": "Dynamic Programming",
+  "difficulty": "medium",
+  "description": "You have a bag with capacity W and n items. Item i has a weight and a value. Choose a set of items, each at most once, whose total weight is at most W and whose total value is as large as possible.\n\nInput format\nLine 1: n and W separated by a space.\nNext n lines: weight and value of each item, separated by a space.\n\nOutput format\nOne integer: the maximum total value.",
+  "constraints": "1 <= n <= 100. 1 <= W <= 1000. 1 <= weight <= 1000. 0 <= value <= 100000.",
+  "hints": [
+    "For each item you have two choices: take it or leave it. Which smaller sub-problems does each choice lead to?",
+    "Let dp[w] be the best value with capacity w using the items considered so far. Processing a new item (wt, val): dp[w] = max(dp[w], dp[w - wt] + val).",
+    "Loop the capacity w from W DOWN to wt. Looping upwards would let the same item be taken repeatedly (that is the unbounded knapsack, a different problem)."
+  ],
+  "examples": [
+    {
+      "input": "3 50\n10 60\n20 100\n30 120\n",
+      "output": "220",
+      "explanation": "Take the items of weight 20 and 30 for a value of 220."
+    },
+    {
+      "input": "2 5\n6 100\n5 10\n",
+      "output": "10",
+      "explanation": "The first item is too heavy; only the second fits."
+    }
+  ]
+}

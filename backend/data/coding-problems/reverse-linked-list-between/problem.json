@@ -1,0 +1,25 @@
+{
+  "slug": "reverse-linked-list-between",
+  "title": "Reverse a Linked List Section",
+  "topic": "Linked Lists",
+  "difficulty": "medium",
+  "description": "Reverse the nodes of a singly linked list from position l to position r (1-based, inclusive) and print the whole list afterwards. Nodes outside that range stay where they are.\n\nInput format\nLine 1: n, l and r separated by spaces.\nLine 2: the n node values in order.\n\nOutput format\nThe resulting list on one line, values separated by single spaces.",
+  "constraints": "1 <= l <= r <= n <= 100000.",
+  "hints": [
+    "Walk to the node just before position l. That node must end up pointing at the old r-th node.",
+    "Reverse the r-l+1 nodes one at a time by repeatedly moving the node after the section start to the front of the section.",
+    "Keep four things: the node before the section, the first node of the section (which becomes its last), and while reversing a prev/current pair. A dummy head avoids special-casing l = 1."
+  ],
+  "examples": [
+    {
+      "input": "5 2 4\n1 2 3 4 5\n",
+      "output": "1 4 3 2 5",
+      "explanation": "Positions 2 to 4 (2 3 4) become 4 3 2."
+    },
+    {
+      "input": "3 1 3\n7 8 9\n",
+      "output": "9 8 7",
+      "explanation": "The whole list is reversed."
+    }
+  ]
+}

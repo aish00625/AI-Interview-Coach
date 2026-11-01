@@ -1,0 +1,15 @@
+const test = require('node:test')
+const assert = require('node:assert/strict')
+const { stubModule } = require('../phaseA/helpers')
+stubModule('bcryptjs', {}); stubModule('jsonwebtoken', {})
+const probe = require('../helpers/routeProbe')
+probe.install()
+
+test('auth routes: login and register are rate limited; me/logout are authenticated; nothing else changed', () => {
+  const routes = probe.loadRoutes('routes/authRoutes.js')
+  const by = Object.fromEntries(routes.map((r) => [`${r.method} ${r.path}`, r.guards]))
+  assert.deepEqual(Object.keys(by).sort(), ['GET /me', 'POST /login', 'POST /logout', 'POST /register'])
+  assert.ok(by['POST /login'].includes('ratelimit'), 'login limiter')
+  assert.ok(by['POST /register'].includes('ratelimit'), 'register limiter')
+  assert.deepEqual(by['GET /me'], ['auth']); assert.deepEqual(by['POST /logout'], ['auth'])
+})

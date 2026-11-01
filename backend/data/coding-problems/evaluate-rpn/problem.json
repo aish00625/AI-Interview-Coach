@@ -1,0 +1,25 @@
+{
+  "slug": "evaluate-rpn",
+  "title": "Evaluate Reverse Polish Notation",
+  "topic": "Stack",
+  "difficulty": "medium",
+  "description": "Evaluate an arithmetic expression written in Reverse Polish Notation (postfix): operands come first and each operator applies to the two values just before it. The operators are +, -, * and /. Division of integers truncates toward zero (so 7 / -2 is -3, not -4).\n\nInput format\nOne line: the tokens separated by single spaces. Each token is an integer or one of + - * /.\n\nOutput format\nThe integer value of the expression.",
+  "constraints": "1 <= number of tokens <= 10000. The expression is valid and never divides by zero. All intermediate values fit in a 64-bit signed integer.",
+  "hints": [
+    "When you read a number you cannot use it yet. Where could you keep numbers until an operator needs them?",
+    "Use a stack: push numbers; on an operator pop two values b then a (b is the top), compute a op b, and push the result.",
+    "For division, truncate toward zero. In Python use int(a / b) for small values or compute with absolute values and restore the sign; // rounds toward negative infinity and is wrong for negative results."
+  ],
+  "examples": [
+    {
+      "input": "2 1 + 3 *\n",
+      "output": "9",
+      "explanation": "(2 + 1) * 3 = 9."
+    },
+    {
+      "input": "10 6 9 3 + -11 * / * 17 + 5 +\n",
+      "output": "22",
+      "explanation": "Evaluating step by step gives 22."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "search-insert-position",
+  "title": "Search Insert Position",
+  "topic": "Searching",
+  "difficulty": "easy",
+  "description": "Given a sorted array of distinct integers and a target value, return the index of the target if it is present. If it is not present, return the index where it would be inserted to keep the array sorted.\n\nInput format\nLine 1: n and target separated by a space.\nLine 2: n integers in increasing order.\n\nOutput format\nOne integer: the 0-based index.",
+  "constraints": "1 <= n <= 100000. All values are distinct and sorted in increasing order. Values fit in a 32-bit signed integer. Your solution should run in O(log n).",
+  "hints": [
+    "The array is sorted, so you can discard half of it with a single comparison.",
+    "Use binary search with low and high pointers. Compare the middle element with the target and move low or high accordingly.",
+    "When the loop ends without finding the target, low is exactly the insertion position (the first index whose value is greater than the target)."
+  ],
+  "examples": [
+    {
+      "input": "4 5\n1 3 5 6\n",
+      "output": "2",
+      "explanation": "The target 5 is at index 2."
+    },
+    {
+      "input": "4 2\n1 3 5 6\n",
+      "output": "1",
+      "explanation": "2 is missing; it would be inserted at index 1."
+    }
+  ]
+}

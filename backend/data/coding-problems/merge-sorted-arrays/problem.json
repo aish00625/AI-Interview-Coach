@@ -1,0 +1,25 @@
+{
+  "slug": "merge-sorted-arrays",
+  "title": "Merge Two Sorted Lists",
+  "topic": "Sorting",
+  "difficulty": "easy",
+  "description": "Two lists of integers are each already sorted in non-decreasing order. Combine them into a single list that is also sorted in non-decreasing order, and print it.\n\nInput format\nLine 1: n and m, the lengths of the two lists.\nLine 2: the n integers of the first list.\nLine 3: the m integers of the second list.\n\nOutput format\nThe n + m integers of the merged list, separated by single spaces.",
+  "constraints": "1 <= n, m <= 100000. Values are between -1000000000 and 1000000000. Duplicates are allowed.",
+  "hints": [
+    "Both lists are already sorted, so you should not need to sort the whole combined list again.",
+    "Compare the front elements of the two lists, output the smaller one, and move forward in that list only.",
+    "Keep two indices i and j. While both lists have items left, append the smaller of a[i] and b[j] and advance that index. When one list runs out, append the rest of the other."
+  ],
+  "examples": [
+    {
+      "input": "3 3\n1 4 9\n2 3 10\n",
+      "output": "1 2 3 4 9 10",
+      "explanation": "Taking the smaller front value each time gives 1, 2, 3, 4, 9, 10."
+    },
+    {
+      "input": "2 3\n5 5\n1 5 8\n",
+      "output": "1 5 5 5 8",
+      "explanation": "Equal values from both lists all appear in the output."
+    }
+  ]
+}

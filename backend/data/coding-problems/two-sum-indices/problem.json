@@ -1,0 +1,25 @@
+{
+  "slug": "two-sum-indices",
+  "title": "Pair With Target Sum",
+  "topic": "Arrays",
+  "difficulty": "easy",
+  "description": "You are given a list of integers and a target value. Exactly one pair of different positions i < j has a[i] + a[j] equal to the target. Print that pair of positions (0-based).\n\nInput format\nLine 1: n, the number of integers.\nLine 2: n space-separated integers.\nLine 3: the target value.\n\nOutput format\nTwo integers i and j (i < j) separated by a space.",
+  "constraints": "2 <= n <= 100000. Values fit in a 32-bit signed integer. Exactly one valid pair exists.",
+  "hints": [
+    "Checking every pair works but is slow for large n. What could you remember about numbers you have already passed?",
+    "For each number x, the partner you need is target - x. A hash map from value to position lets you look the partner up in constant time.",
+    "Scan left to right. Before storing x, check whether target - x is already in the map; if it is, you have the answer. Store x only afterwards, so a number never pairs with itself."
+  ],
+  "examples": [
+    {
+      "input": "4\n2 7 11 15\n9\n",
+      "output": "0 1",
+      "explanation": "2 + 7 = 9, at positions 0 and 1."
+    },
+    {
+      "input": "3\n3 2 4\n6\n",
+      "output": "1 2",
+      "explanation": "2 + 4 = 6; the 3 cannot pair with itself."
+    }
+  ]
+}

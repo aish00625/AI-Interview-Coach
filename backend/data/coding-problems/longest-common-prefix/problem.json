@@ -1,0 +1,25 @@
+{
+  "slug": "longest-common-prefix",
+  "title": "Longest Common Prefix",
+  "topic": "Strings",
+  "difficulty": "easy",
+  "description": "Find the longest string that is a prefix of every word in a list.\n\nInput format\nLine 1: n, the number of words.\nNext n lines: one lowercase word per line.\n\nOutput format\nThe longest common prefix, or the text NONE if the words share no common first letter.",
+  "constraints": "1 <= n <= 1000. Each word has 1 to 200 lowercase letters.",
+  "hints": [
+    "A prefix common to all words can be no longer than the shortest word.",
+    "Compare the words character by character, column by column; stop at the first column where any word differs or ends.",
+    "Start with the first word as the candidate prefix and shorten it until every other word starts with it. Remember to print NONE when nothing is left."
+  ],
+  "examples": [
+    {
+      "input": "3\nflower\nflow\nflight\n",
+      "output": "fl",
+      "explanation": "All three start with \"fl\" but the third letters differ."
+    },
+    {
+      "input": "3\ndog\nracecar\ncar\n",
+      "output": "NONE",
+      "explanation": "There is no shared first letter."
+    }
+  ]
+}

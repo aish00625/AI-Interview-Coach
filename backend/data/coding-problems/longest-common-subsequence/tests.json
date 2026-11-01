@@ -1,0 +1,62 @@
+[
+ {
+  "input": "abcde\nace\n",
+  "expected_output": "3",
+  "is_hidden": false
+ },
+ {
+  "input": "abc\ndef\n",
+  "expected_output": "0",
+  "is_hidden": false
+ },
+ {
+  "input": "a\na\n",
+  "expected_output": "1",
+  "is_hidden": false
+ },
+ {
+  "input": "a\nb\n",
+  "expected_output": "0",
+  "is_hidden": true
+ },
+ {
+  "input": "abc\nabc\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "aaaa\naa\n",
+  "expected_output": "2",
+  "is_hidden": true
+ },
+ {
+  "input": "abcbdab\nbdcaba\n",
+  "expected_output": "4",
+  "is_hidden": true
+ },
+ {
+  "input": "programming\ngaming\n",
+  "expected_output": "6",
+  "is_hidden": true
+ },
+ {
+  "input": "xyz\nzyx\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "caabacacabcacacccabbbabbcbcabcbcacababbc\nbabaacbbbbcbbabcacaaabcaaabcbbaabab\n",
+  "expected_output": "24",
+  "is_hidden": true
+ },
+ {
+  "input": "bdcadacbdacdcdcabddabbaccbddcddaaabbbdaacdcccbbcbacbabbdaadaaadccbadbdabccccbdbcadadbddababcadcbdacdcabaacdbbbdaabcacbcabcabbabbaaabbdadccaaddbdcadaadbbdddbccbadccabcacdaaaabdcdcbdaddaacaabcaccabaddadaddbccdccdbdddccdaadbdccbcbcbbadabcbdabbcbcdadcdddcbccbabcdaabbdcbbcccdcccaddbdacdaacbcdaaadcbcdbbcbbabadbcdaaddbbaccaddcbdddcbdaabcdbaddbdbcbabdbcdccbcccaaadbbbcbbdadbcccaacccdccbbcccbdbadccabcdbdcbdaacdcdaababbcccadadbaadacaddbcaabadddbacdbacbdaaab\ncabddaabbdcbabdbcbbdaaddbbabbcbbbadbbacbbdcbbcdbdcdbcbdccbcdaacdbdbcbadccdbcdbbdcbdcbdadbcddcadbbdacabcaadabadacbdddadbccaabbaadbdddbdcacbbdddbdcbdddbdbbbdcbdbcdcdccaacccdddcacbaddbbbddddcaaacabbcbdacbaccddabcbbadacaddbcbdbbabcdbdbdcabdbbcabbbccaaaadadcdabbdabbabacdacddcbdadcbabbccbccbbdddcdabbacccddadbddaabbaaabacdadacddbddbaabbdbdadbacdbaddadcddddbbbadbdaaddddddacdacaadaabcdaacdbdbdbabbcbcbddcacdcaababdcdddbbabdbdbbdbccbcdbbdddcbcdcadbdcbbabddc\n",
+  "expected_output": "282",
+  "is_hidden": true
+ },
+ {
+  "input": "hlhhcgeakgfmffggebiehbkicdikdbfefhmglfhjidhbhiejihfhjgdfkkmmdadlagjihdcgcigffmelhmcicbgfjffdklamdehiheffgmgajgcaeblbkijfbakajimkgakdidiigmiccfaidacklhhaibkkeaeeifjkjaifhbhlhmjfhlkchghcfheechdhgffbiibkbhdgcggheekmjfckcelibjbiglhmlfcllkkembimmddifgfcijbhacgkdblljeligmbfjmeekjdgafhhegkccdkfcbdgkeackgjkbjkmjdmmfikbmjabfabbgjlbajcdicbammblcaadgmhglmmlhebflkmaljcdfelbgahmkfcgjkelekfibiahhmiajifgbflllaljbdeaeeaeljcahcgjmhegbhkdldfmemkmlafmedkifcjmiljeli\nrqyxvoquwxnozvwtypuvxvooxvvwnxpyoytxxxwrqsrrsuxnvtxvtuuqzoytwqvonnzxrrxqvyxsoopzqsquqrnyunupvryrpyzqpwvzutxyovwunqquovquvstqowrzopuuxprsropxxprxsznxqzzpxnozsovvqyvqottvxostnsouosptuwpzsnqzturwoxvsypouqyyvtowttruxswwurnsnynswvtpxzqonnypusyxzzonusznsrtozruxwoynuoutpqypnyvoywytnrrxwnyxnswppurqpsyqyuzyptvzunrtszxnusxnzztwzzxuynutpzzottyvsrqntroxnrtutqyyztvywrzqnzzpvzynzznvsznoynvzrprtsoxztxnqvwqnupupwqvsrpounutnonqtyrpqqrwxnsuwvxxxvqwunzpostpprwqrvoo\n",
+  "expected_output": "0",
+  "is_hidden": true
+ }
+]

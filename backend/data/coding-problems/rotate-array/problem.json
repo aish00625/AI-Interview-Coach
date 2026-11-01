@@ -1,0 +1,25 @@
+{
+  "slug": "rotate-array",
+  "title": "Rotate Array",
+  "topic": "Arrays",
+  "difficulty": "easy",
+  "description": "Rotate an array to the right by k positions: every element moves k places to the right and the elements that fall off the end wrap around to the front.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: n integers.\n\nOutput format\nThe rotated array on one line, values separated by single spaces.",
+  "constraints": "1 <= n <= 100000. 0 <= k <= 1000000000 (k can be larger than n). Values fit in a 32-bit signed integer.",
+  "hints": [
+    "What happens to the array if you rotate it by exactly n positions? Use that to shrink k.",
+    "After replacing k with k mod n, the last k elements move to the front and the rest follow them.",
+    "Result = a[n-k:] + a[:n-k] after k = k % n. Be careful when k % n is 0: a[-0:] is the whole array in Python."
+  ],
+  "examples": [
+    {
+      "input": "5 2\n1 2 3 4 5\n",
+      "output": "4 5 1 2 3",
+      "explanation": "Rotating right by 2 moves the last two values, 4 and 5, to the front."
+    },
+    {
+      "input": "3 4\n1 2 3\n",
+      "output": "3 1 2",
+      "explanation": "Rotating by 4 is the same as rotating by 4 mod 3 = 1."
+    }
+  ]
+}

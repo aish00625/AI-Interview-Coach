@@ -1,0 +1,25 @@
+{
+  "slug": "koko-eating-bananas",
+  "title": "Minimum Eating Speed",
+  "topic": "Searching",
+  "difficulty": "medium",
+  "description": "There are n piles of bananas and h hours before the guards return. Each hour you choose one pile and eat up to k bananas from it; if the pile has fewer than k bananas you finish it and do nothing else that hour. Find the smallest integer k that lets you eat all the bananas within h hours.\n\nInput format\nLine 1: n and h separated by a space.\nLine 2: n integers, the pile sizes.\n\nOutput format\nOne integer: the minimum eating speed k.",
+  "constraints": "1 <= n <= 100000. n <= h <= 1000000000. 1 <= pile size <= 1000000000.",
+  "hints": [
+    "If a speed k works, does a larger speed also work? What does that suggest about how to search for the smallest working k?",
+    "Binary search on k between 1 and the largest pile. For a candidate k the hours needed are the sum of ceil(pile / k).",
+    "Use integer ceiling division: (pile + k - 1) // k. Plain pile // k rounds down and underestimates the hours. If the hours needed are <= h, try a smaller k; otherwise a larger one."
+  ],
+  "examples": [
+    {
+      "input": "4 8\n3 6 7 11\n",
+      "output": "4",
+      "explanation": "At speed 4 the piles take 1 + 2 + 2 + 3 = 8 hours; speed 3 would need 10."
+    },
+    {
+      "input": "5 5\n30 11 23 4 20\n",
+      "output": "30",
+      "explanation": "With exactly one hour per pile you must eat the largest pile in one hour: 30."
+    }
+  ]
+}

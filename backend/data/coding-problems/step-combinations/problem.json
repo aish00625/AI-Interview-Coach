@@ -1,0 +1,25 @@
+{
+  "slug": "step-combinations",
+  "title": "Staircase With Variable Steps",
+  "topic": "Dynamic Programming",
+  "difficulty": "medium",
+  "description": "You climb a staircase of n steps. In one move you may climb any number of steps from 1 up to k. Different orders of moves count as different ways (for example 1 then 2 is different from 2 then 1).\n\nPrint the number of ways to reach exactly step n, modulo 1000000007.\n\nInput format\nOne line with two integers n and k.\n\nOutput format\nOne integer: the number of ways modulo 1000000007.",
+  "constraints": "1 <= n <= 100000 and 1 <= k <= 1000.",
+  "hints": [
+    "Let ways[i] be the number of ways to reach step i. How can you reach step i from earlier steps?",
+    "The last move was some size s between 1 and k, so ways[i] is the sum of ways[i - s] for s = 1..k (only where i - s >= 0). ways[0] = 1.",
+    "Summing k values for every step is O(n * k) and may be too slow. Keep a running window sum of the last k values: add ways[i - 1], subtract ways[i - k - 1]. Apply the modulo at every step."
+  ],
+  "examples": [
+    {
+      "input": "4 2\n",
+      "output": "5",
+      "explanation": "With steps of 1 or 2: 1111, 112, 121, 211, 22."
+    },
+    {
+      "input": "3 3\n",
+      "output": "4",
+      "explanation": "111, 12, 21 and 3."
+    }
+  ]
+}

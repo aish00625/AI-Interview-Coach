@@ -1,0 +1,6 @@
+# Optional: webcam analysis (face presence always; head direction / gaze additionally need the small MediaPipe model file,
+# downloaded by:  python -m app.diagnostics --download-vision-model ).
+# mediapipe depends on opencv-contrib-python, which provides `cv2`. Do not also install opencv-python or
+# opencv-python-headless: several OpenCV distributions overwrite each other's cv2 module.
+mediapipe>=0.10.14
+opencv-contrib-python>=4.8,<5

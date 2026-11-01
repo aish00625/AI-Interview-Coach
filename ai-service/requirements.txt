@@ -1,0 +1,16 @@
+# AI service - CORE dependencies. Always required. Install with:  pip install -r requirements.txt
+# Optional features have their own files so that a failed install of a heavy package can never stop the service from
+# starting (the service reports what is missing at GET /capabilities):
+#   pip install -r requirements-speech.txt   # voice answers (faster-whisper)
+#   pip install -r requirements-vision.txt   # webcam analysis (OpenCV + MediaPipe)
+#
+# Version ranges (not exact pins) are used on purpose: the right wheel depends on the Python version on your machine, and
+# pip picks the newest compatible one. Nothing here was installed from this file in the authoring sandbox; the first
+# `python -m app.diagnostics` run on your machine is the real check.
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+pydantic>=2.6,<3
+python-dotenv>=1.0,<2
+python-multipart>=0.0.9
+numpy>=1.26,<3
+scikit-learn>=1.4,<2

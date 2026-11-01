@@ -1,0 +1,25 @@
+{
+  "slug": "max-subarray-sum",
+  "title": "Best Contiguous Stretch",
+  "topic": "Arrays",
+  "difficulty": "medium",
+  "description": "You are given a list of integers, which may be negative. Find the largest possible sum of a non-empty run of consecutive elements and print that sum.\n\nInput format\nLine 1: n, the number of integers.\nLine 2: n space-separated integers.\n\nOutput format\nOne integer: the maximum sum of a non-empty contiguous run.",
+  "constraints": "1 <= n <= 200000. Each value is between -1000000 and 1000000; the answer fits in a 64-bit signed integer.",
+  "hints": [
+    "Trying every start and end is too slow for 200000 values. Can you decide, one element at a time, whether to extend the current run or start a new one?",
+    "At each position keep the best sum of a run that ends exactly there: either the element alone, or the element added to the best run ending just before it.",
+    "Track best_ending_here = max(x, best_ending_here + x) and best_overall = max(best_overall, best_ending_here). Start both from the first element, not from zero, so an all-negative list works."
+  ],
+  "examples": [
+    {
+      "input": "9\n-2 1 -3 4 -1 2 1 -5 4\n",
+      "output": "6",
+      "explanation": "The run 4 -1 2 1 sums to 6."
+    },
+    {
+      "input": "3\n-4 -2 -7\n",
+      "output": "-2",
+      "explanation": "The run must not be empty, so the best choice is the single value -2."
+    }
+  ]
+}

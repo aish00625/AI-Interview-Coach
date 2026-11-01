@@ -1,0 +1,25 @@
+{
+  "slug": "palindrome-check",
+  "title": "Palindrome Ignoring Punctuation",
+  "topic": "Strings",
+  "difficulty": "easy",
+  "description": "A line of text is a palindrome when, after removing every character that is not a letter or a digit and ignoring the difference between upper and lower case, it reads the same forwards and backwards. A line with no letters or digits at all counts as a palindrome.\n\nPrint YES if the line is a palindrome and NO otherwise.\n\nInput format\nOne line of text.\n\nOutput format\nYES or NO.",
+  "constraints": "1 <= length of the line <= 100000. The line contains printable ASCII characters.",
+  "hints": [
+    "Spaces, punctuation and capital letters should not affect the answer. How could you build a cleaned copy of the line?",
+    "Keep only letters and digits, convert them to one case, then compare the cleaned text with its reverse.",
+    "Alternatively use two pointers from both ends, skipping characters that are not letters or digits, and compare the remaining characters in lower case."
+  ],
+  "examples": [
+    {
+      "input": "A man, a plan, a canal: Panama\n",
+      "output": "YES",
+      "explanation": "Without spaces and punctuation: amanaplanacanalpanama."
+    },
+    {
+      "input": "race a car\n",
+      "output": "NO",
+      "explanation": "raceacar is not the same reversed."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "longest-increasing-subsequence",
+  "title": "Longest Increasing Subsequence",
+  "topic": "Dynamic Programming",
+  "difficulty": "medium",
+  "description": "A subsequence keeps the original order of elements but may skip some. Find the length of the longest strictly increasing subsequence of an array.\n\nInput format\nLine 1: n.\nLine 2: n integers.\n\nOutput format\nOne integer: the length of the longest strictly increasing subsequence.",
+  "constraints": "1 <= n <= 100000. Values fit in a 32-bit signed integer.",
+  "hints": [
+    "Let best[i] be the length of the longest increasing subsequence that ends at index i. How can best[i] be computed from earlier values?",
+    "best[i] = 1 + max(best[j]) over j < i with a[j] < a[i]. That is O(n^2) and enough for small inputs.",
+    "For large n keep a list \"tails\" where tails[L] is the smallest possible last value of an increasing subsequence of length L+1. For each value, binary-search the first tail >= value (bisect_left) and replace it, or append if none. Use bisect_left for strictly increasing sequences."
+  ],
+  "examples": [
+    {
+      "input": "8\n10 9 2 5 3 7 101 18\n",
+      "output": "4",
+      "explanation": "One longest subsequence is 2, 3, 7, 18 (or 2, 5, 7, 101); length 4."
+    },
+    {
+      "input": "4\n7 7 7 7\n",
+      "output": "1",
+      "explanation": "Equal values are not strictly increasing, so the best length is 1."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slug": "longest-common-subsequence",
+  "title": "Longest Common Subsequence",
+  "topic": "Dynamic Programming",
+  "difficulty": "medium",
+  "description": "A subsequence keeps the order of characters but may skip some. Find the length of the longest subsequence that two strings have in common.\n\nInput format\nLine 1: the first string s.\nLine 2: the second string t.\nBoth contain lowercase letters.\n\nOutput format\nOne integer: the length of the longest common subsequence.",
+  "constraints": "1 <= length of s, t <= 1000.",
+  "hints": [
+    "Compare the last characters of the two strings. What do you do if they are equal, and what if they are different?",
+    "Let dp[i][j] be the answer for the first i characters of s and the first j characters of t. If s[i-1] == t[j-1] then dp[i][j] = dp[i-1][j-1] + 1, otherwise max(dp[i-1][j], dp[i][j-1]).",
+    "A subsequence may skip characters. Finding the longest common contiguous substring is a different (easier) problem and gives smaller answers."
+  ],
+  "examples": [
+    {
+      "input": "abcde\nace\n",
+      "output": "3",
+      "explanation": "The common subsequence \"ace\" has length 3."
+    },
+    {
+      "input": "abc\ndef\n",
+      "output": "0",
+      "explanation": "No letters in common."
+    }
+  ]
+}

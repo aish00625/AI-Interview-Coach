@@ -1,0 +1,25 @@
+{
+  "slug": "longest-palindromic-substring",
+  "title": "Longest Palindromic Substring",
+  "topic": "Strings",
+  "difficulty": "medium",
+  "description": "A palindrome reads the same forwards and backwards. Find the length of the longest contiguous substring of a given string that is a palindrome.\n\nInput format\nLine 1: a string s of lowercase letters.\n\nOutput format\nOne integer: the length of the longest palindromic substring.",
+  "constraints": "1 <= length of s <= 2000.",
+  "hints": [
+    "Every palindrome has a centre. How many possible centres does a string of length n have?",
+    "Expand outwards from each centre while the characters on both sides match, and remember the longest result.",
+    "There are 2n-1 centres: n single characters (odd length) and n-1 gaps between characters (even length). Handling only odd centres misses palindromes such as \"abba\"."
+  ],
+  "examples": [
+    {
+      "input": "babad\n",
+      "output": "3",
+      "explanation": "\"bab\" (or \"aba\") has length 3."
+    },
+    {
+      "input": "cbbd\n",
+      "output": "2",
+      "explanation": "The longest palindrome is \"bb\", which has an even length."
+    }
+  ]
+}

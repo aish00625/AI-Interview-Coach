@@ -1,0 +1,25 @@
+{
+  "slug": "longest-unique-substring",
+  "title": "Longest Run Without Repeats",
+  "topic": "Hashing",
+  "difficulty": "medium",
+  "description": "Given a string of lowercase letters, find the length of the longest substring (a block of consecutive characters) in which no letter appears more than once. Print that length.\n\nInput format\nOne line containing the string.\n\nOutput format\nOne integer: the length of the longest substring with all distinct characters.",
+  "constraints": "1 <= length of the string <= 100000. The string contains only the letters a to z.",
+  "hints": [
+    "Checking every substring for repeats is far too slow. Think about a window that you can slide along the string.",
+    "Keep a window [left, right] with no repeated letters. Move right one step at a time; if the new letter is already in the window, move left forward until the repeat is gone.",
+    "Store the most recent index of each letter. When s[right] was last seen at position p >= left, set left = p + 1. The answer is the largest right - left + 1 seen."
+  ],
+  "examples": [
+    {
+      "input": "abcabcbb\n",
+      "output": "3",
+      "explanation": "The longest such substring is abc (length 3)."
+    },
+    {
+      "input": "bbbbb\n",
+      "output": "1",
+      "explanation": "Every substring longer than 1 repeats b."
+    }
+  ]
+}

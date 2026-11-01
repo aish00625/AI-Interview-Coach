@@ -1,0 +1,25 @@
+{
+  "slug": "linked-list-cycle",
+  "title": "Linked List Cycle",
+  "topic": "Linked Lists",
+  "difficulty": "medium",
+  "description": "A singly linked list has n nodes holding the given values, in order. The last node's next pointer either points to nothing or back to an earlier node (a cycle). Decide whether the list contains a cycle.\n\nInput format\nLine 1: n and pos separated by a space. pos is the 0-based index of the node that the last node points back to, or -1 if the last node points to nothing.\nLine 2: n integers, the node values (values may repeat; they say nothing about the structure).\n\nOutput format\nYES if the list has a cycle, otherwise NO.",
+  "constraints": "1 <= n <= 100000. -1 <= pos < n. Values fit in a 32-bit signed integer.",
+  "hints": [
+    "If you walk the list and ever reach a node you have already visited, what does that tell you?",
+    "Remember visited nodes (by position, not by value) in a set. Reaching the end of the list means there is no cycle.",
+    "Floyd's algorithm needs no extra memory: move one pointer one step and another two steps at a time. If they ever meet, there is a cycle. Do not compare node values - duplicates are allowed."
+  ],
+  "examples": [
+    {
+      "input": "4 1\n3 2 0 -4\n",
+      "output": "YES",
+      "explanation": "The last node points back to index 1, forming a cycle."
+    },
+    {
+      "input": "3 -1\n1 2 3\n",
+      "output": "NO",
+      "explanation": "The last node points to nothing."
+    }
+  ]
+}

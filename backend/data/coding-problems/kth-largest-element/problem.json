@@ -1,0 +1,25 @@
+{
+  "slug": "kth-largest-element",
+  "title": "Kth Largest Element",
+  "topic": "Sorting",
+  "difficulty": "medium",
+  "description": "Find the k-th largest element of an array. Duplicates count separately: in [5, 5, 4] the 2nd largest element is 5.\n\nInput format\nLine 1: n and k separated by a space.\nLine 2: n integers.\n\nOutput format\nOne integer: the k-th largest element.",
+  "constraints": "1 <= k <= n <= 100000. Values fit in a 32-bit signed integer.",
+  "hints": [
+    "If the array were sorted in descending order, where would the k-th largest element sit?",
+    "Sorting solves it in O(n log n). Take the element at index k-1 of the descending order.",
+    "A min-heap of size k gives O(n log k): push each value and pop the smallest whenever the heap grows beyond k. The heap top is the answer. Do not remove duplicates."
+  ],
+  "examples": [
+    {
+      "input": "6 2\n3 2 1 5 6 4\n",
+      "output": "5",
+      "explanation": "Sorted descending: 6 5 4 3 2 1; the 2nd is 5."
+    },
+    {
+      "input": "9 4\n3 2 3 1 2 4 5 5 6\n",
+      "output": "4",
+      "explanation": "Sorted descending: 6 5 5 4 3 3 2 2 1; the 4th is 4."
+    }
+  ]
+}

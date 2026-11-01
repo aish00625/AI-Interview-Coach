@@ -1,0 +1,47 @@
+[
+ {
+  "input": "4\n",
+  "expected_output": "2",
+  "is_hidden": false
+ },
+ {
+  "input": "1\n",
+  "expected_output": "1",
+  "is_hidden": false
+ },
+ {
+  "input": "2\n",
+  "expected_output": "0",
+  "is_hidden": false
+ },
+ {
+  "input": "3\n",
+  "expected_output": "0",
+  "is_hidden": true
+ },
+ {
+  "input": "5\n",
+  "expected_output": "10",
+  "is_hidden": true
+ },
+ {
+  "input": "6\n",
+  "expected_output": "4",
+  "is_hidden": true
+ },
+ {
+  "input": "7\n",
+  "expected_output": "40",
+  "is_hidden": true
+ },
+ {
+  "input": "8\n",
+  "expected_output": "92",
+  "is_hidden": true
+ },
+ {
+  "input": "9\n",
+  "expected_output": "352",
+  "is_hidden": true
+ }
+]

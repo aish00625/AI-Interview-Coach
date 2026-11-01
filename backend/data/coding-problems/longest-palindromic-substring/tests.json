@@ -1,0 +1,57 @@
+[
+ {
+  "input": "babad\n",
+  "expected_output": "3",
+  "is_hidden": false
+ },
+ {
+  "input": "cbbd\n",
+  "expected_output": "2",
+  "is_hidden": false
+ },
+ {
+  "input": "a\n",
+  "expected_output": "1",
+  "is_hidden": false
+ },
+ {
+  "input": "ab\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "aa\n",
+  "expected_output": "2",
+  "is_hidden": true
+ },
+ {
+  "input": "abba\n",
+  "expected_output": "4",
+  "is_hidden": true
+ },
+ {
+  "input": "abcdef\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "forgeeksskeegfor\n",
+  "expected_output": "10",
+  "is_hidden": true
+ },
+ {
+  "input": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n",
+  "expected_output": "300",
+  "is_hidden": true
+ },
+ {
+  "input": "abacdfgdcaba\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "bbabbbbaabaaaabbabbababbbbaabbbaababbaaaaaabaaabaaabaaabaaabbaaabbbabbaabbabaaaaaaaaabaaaababababbabbaaaaabbaaabbabbaaaa\n",
+  "expected_output": "19",
+  "is_hidden": true
+ }
+]

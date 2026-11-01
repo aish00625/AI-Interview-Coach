@@ -1,0 +1,25 @@
+{
+  "slug": "max-depth-binary-tree",
+  "title": "Maximum Depth of a Binary Tree",
+  "topic": "Trees",
+  "difficulty": "easy",
+  "description": "The depth of a binary tree is the number of nodes on the longest path from the root down to a leaf. Find the depth of the given tree (an empty tree has depth 0).\n\nInput format\nOne line: the tree in level-order, values separated by spaces, with the word null for a missing child. Children of null nodes are not listed (the usual level-order serialisation). For example \"3 9 20 null null 15 7\".\n\nOutput format\nOne integer: the depth of the tree.",
+  "constraints": "0 <= number of nodes <= 100000. Values are integers. An empty tree is written as the single token null.",
+  "hints": [
+    "The depth of a tree is 1 plus the larger depth of its two sub-trees. What is the depth of an empty tree?",
+    "Write a recursive function depth(node) = 0 if node is empty, otherwise 1 + max(depth(left), depth(right)).",
+    "For very deep trees recursion can overflow the stack; a breadth-first traversal that counts levels needs no recursion."
+  ],
+  "examples": [
+    {
+      "input": "3 9 20 null null 15 7\n",
+      "output": "3",
+      "explanation": "Levels: [3], [9, 20], [15, 7] - three levels."
+    },
+    {
+      "input": "1 null 2\n",
+      "output": "2",
+      "explanation": "The tree is a chain of two nodes."
+    }
+  ]
+}

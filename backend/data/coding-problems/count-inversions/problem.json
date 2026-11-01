@@ -1,0 +1,25 @@
+{
+  "slug": "count-inversions",
+  "title": "Count Inversions",
+  "topic": "Sorting",
+  "difficulty": "hard",
+  "description": "An inversion is a pair of positions i < j with a[i] > a[j]. Count the inversions in an array. The count measures how far the array is from being sorted.\n\nInput format\nLine 1: n.\nLine 2: n integers.\n\nOutput format\nOne integer: the number of inversions (it can exceed 32 bits).",
+  "constraints": "1 <= n <= 100000. Values fit in a 32-bit signed integer. Equal values do not form an inversion.",
+  "hints": [
+    "Checking every pair is O(n^2) and too slow for n = 100000. Is there a sorting algorithm that naturally compares elements across the middle?",
+    "Use merge sort. While merging two sorted halves, whenever you take an element from the right half before the remaining left elements, it forms an inversion with every one of them.",
+    "When you take right[j] because it is strictly smaller than left[i], add (number of elements still left in the left half) to the answer. If they are equal take the left one first, so equal values are not counted. Use a 64-bit counter."
+  ],
+  "examples": [
+    {
+      "input": "5\n2 4 1 3 5\n",
+      "output": "3",
+      "explanation": "The inversions are (2,1), (4,1) and (4,3)."
+    },
+    {
+      "input": "3\n3 2 1\n",
+      "output": "3",
+      "explanation": "Every pair is out of order: three inversions."
+    }
+  ]
+}

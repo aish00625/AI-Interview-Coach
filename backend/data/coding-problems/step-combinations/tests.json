@@ -1,0 +1,102 @@
+[
+ {
+  "input": "4 2\n",
+  "expected_output": "5",
+  "is_hidden": false
+ },
+ {
+  "input": "3 3\n",
+  "expected_output": "4",
+  "is_hidden": false
+ },
+ {
+  "input": "1 5\n",
+  "expected_output": "1",
+  "is_hidden": false
+ },
+ {
+  "input": "1 1\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "2 1\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "5 1\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "5 10\n",
+  "expected_output": "16",
+  "is_hidden": true
+ },
+ {
+  "input": "30 2\n",
+  "expected_output": "1346269",
+  "is_hidden": true
+ },
+ {
+  "input": "100000 1\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "20000 500\n",
+  "expected_output": "180581038",
+  "is_hidden": true
+ },
+ {
+  "input": "10 3\n",
+  "expected_output": "274",
+  "is_hidden": true
+ },
+ {
+  "input": "20 5\n",
+  "expected_output": "400096",
+  "is_hidden": true
+ },
+ {
+  "input": "50 2\n",
+  "expected_output": "365010934",
+  "is_hidden": true
+ },
+ {
+  "input": "100 10\n",
+  "expected_output": "168467527",
+  "is_hidden": true
+ },
+ {
+  "input": "1000 7\n",
+  "expected_output": "895660541",
+  "is_hidden": true
+ },
+ {
+  "input": "5000 50\n",
+  "expected_output": "47503159",
+  "is_hidden": true
+ },
+ {
+  "input": "100000 2\n",
+  "expected_output": "967618232",
+  "is_hidden": true
+ },
+ {
+  "input": "3000 100\n",
+  "expected_output": "623565972",
+  "is_hidden": true
+ },
+ {
+  "input": "100000 150\n",
+  "expected_output": "586648349",
+  "is_hidden": true
+ },
+ {
+  "input": "31623 1000\n",
+  "expected_output": "115385847",
+  "is_hidden": true
+ }
+]

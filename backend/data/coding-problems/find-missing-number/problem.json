@@ -1,0 +1,25 @@
+{
+  "slug": "find-missing-number",
+  "title": "Find the Missing Number",
+  "topic": "Arrays",
+  "difficulty": "easy",
+  "description": "You are given n distinct integers taken from the range 0..n (inclusive). Exactly one number from that range is missing. Find it.\n\nInput format\nLine 1: n.\nLine 2: n distinct integers.\n\nOutput format\nThe missing integer.",
+  "constraints": "1 <= n <= 100000. Every value is between 0 and n and all values are distinct.",
+  "hints": [
+    "There are n + 1 numbers in the range 0..n but only n are given. What do you know about the sum of the full range?",
+    "The sum of 0..n is n*(n+1)/2. Subtract the sum of the given numbers.",
+    "Alternatively XOR every index 0..n with every value: pairs cancel and only the missing number remains."
+  ],
+  "examples": [
+    {
+      "input": "3\n3 0 1\n",
+      "output": "2",
+      "explanation": "The range is 0..3 and 2 is absent."
+    },
+    {
+      "input": "2\n0 1\n",
+      "output": "2",
+      "explanation": "The range is 0..2, so the missing number is 2."
+    }
+  ]
+}

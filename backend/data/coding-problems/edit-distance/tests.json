@@ -1,0 +1,87 @@
+[
+ {
+  "input": "kitten\nsitting\n",
+  "expected_output": "3",
+  "is_hidden": false
+ },
+ {
+  "input": "flaw\nlawn\n",
+  "expected_output": "2",
+  "is_hidden": false
+ },
+ {
+  "input": "abc\nabc\n",
+  "expected_output": "0",
+  "is_hidden": false
+ },
+ {
+  "input": "a\nb\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "a\na\n",
+  "expected_output": "0",
+  "is_hidden": true
+ },
+ {
+  "input": "ab\nba\n",
+  "expected_output": "2",
+  "is_hidden": true
+ },
+ {
+  "input": "intention\nexecution\n",
+  "expected_output": "5",
+  "is_hidden": true
+ },
+ {
+  "input": "horse\nros\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "abcdef\nazced\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "sunday\nsaturday\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "zzzz\naz\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "babb\naabb\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "aaccaada\naaccabda\n",
+  "expected_output": "1",
+  "is_hidden": true
+ },
+ {
+  "input": "ddcdbdbcabbacba\nddcadbdacabbacaa\n",
+  "expected_output": "3",
+  "is_hidden": true
+ },
+ {
+  "input": "afcbeccafbdbbaedbeedadecbdcdabbecafdfaffdeebdafffcaddfadcddb\nafcbeccafbbbfaedbeebbdadebdcdababefafdfaffdeeaddaffcaddefacddb\n",
+  "expected_output": "12",
+  "is_hidden": true
+ },
+ {
+  "input": "adccbadababcaacaccbcacacdadbdaaaaddbadbcdcbbacddadbbbdbbccddbbabdbacdabdadbaacbbcccddcdbdacbdccdbcbcdcaddbbbaaddbcadabdccbcaaadcababddabdcadabadbbcdadbdcbcccabdcccbacddcbccbaadcbacaddddcdacbccabcbadbadacbddcabbbccddccdbdcddddbcaddbdbcdcadbddcbcaddadbbbaacdbbaabcdccadaaabaabccbdbdbbbbabdaaacdbbcccdda\nadccbaddbacaaaccccbcbcacddadbdaaaadbabdbccbacddadbbbdbbccdadabadbdbacdaadabaacbbacccddcdbdacbdccdcbcdcaddabbaddcadcbdcdbcaaaddabaadabdadabadbbcdcdbdccccabdcaccbacddcbccbaadcbacadddcaabccbbdcdbadacbdadcbabbccdaccdbdccddcdbcaddabcdcadbddacbcaddadbbacdabbaabdcadaabbdabcbdbdbbabdabaacdbbccbdcda\n",
+  "expected_output": "58",
+  "is_hidden": true
+ },
+ {
+  "input": "abcdefghij\nklmnopqrst\n",
+  "expected_output": "10",
+  "is_hidden": true
+ }
+]

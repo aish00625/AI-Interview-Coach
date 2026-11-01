@@ -1,0 +1,25 @@
+{
+  "slug": "first-non-repeating-in-stream",
+  "title": "First Non-Repeating Character in a Stream",
+  "topic": "Queue",
+  "difficulty": "medium",
+  "description": "Characters arrive one at a time. After each arrival, report the first character (in arrival order) that has appeared exactly once so far, or # if there is none.\n\nInput format\nLine 1: a string of lowercase letters (the stream, in arrival order).\n\nOutput format\nA string of the same length: its i-th character is the answer after the i-th arrival.",
+  "constraints": "1 <= length of the stream <= 100000.",
+  "hints": [
+    "After each new character you need the earliest character that is still unique. What structure keeps things in arrival order?",
+    "Keep a queue of characters in arrival order and a count per letter. When a character's count reaches 2 it can no longer be the answer.",
+    "After updating the counts, pop characters from the FRONT of the queue while their count is more than 1. Then the front (if any) is the answer; if the queue is empty print #."
+  ],
+  "examples": [
+    {
+      "input": "aabc\n",
+      "output": "a#bb",
+      "explanation": "After \"a\": a. After \"aa\": none (#). After \"aab\": b. After \"aabc\": b."
+    },
+    {
+      "input": "abcabc\n",
+      "output": "aaabc#",
+      "explanation": "a stays first until it repeats; then b, then c, then none."
+    }
+  ]
+}

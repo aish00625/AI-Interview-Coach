@@ -1,0 +1,99 @@
+# Continuous integration. Runs on every push / pull request. Uses only free GitHub-hosted runners and service containers.
+#
+# WHAT THIS DOES NOT DO: it does not run the Docker code-executor against real language containers (the executor
+# needs sibling-container access to a Docker daemon), and it does not build or browser-test the React app. Those are
+# covered by the manual Windows end-to-end checklist. The coding-problem verification below uses the runners' own
+# python/node/java/g++ interpreters, NOT the executor.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ci_only_password
+          POSTGRES_DB: aic_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PGHOST: localhost
+      PGUSER: postgres
+      PGPASSWORD: ci_only_password
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci || npm install
+      - name: Apply schema and ordered migrations
+        run: |
+          psql -d aic_test -v ON_ERROR_STOP=1 -f database/schema.sql
+          for f in $(ls database/migrations/*.sql | grep -v '\.down\.sql' | sort); do
+            echo "applying $f"; psql -d aic_test -v ON_ERROR_STOP=1 -f "$f"
+          done
+      - name: Backend test suite (unit + real-PostgreSQL tests)
+        working-directory: backend
+        env:
+          AIC_TEST_DB: aic_test
+          AIC_TEST_HOST: localhost
+          AIC_TEST_PORT: '5432'
+        run: npm test
+      - name: Verify every coding problem (reference + oracle pass, wrong programs fail) with local interpreters
+        working-directory: backend
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq g++ default-jdk-headless >/dev/null
+          npm run verify:problems
+
+  ai-service:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the evaluator's dependencies only (the full service also needs opencv/mediapipe/whisper)
+        run: pip install "numpy>=2" "scikit-learn>=1.5" "pydantic>=2.9"
+      - name: Evaluator and rubric-bank unit tests
+        working-directory: ai-service
+        run: python -m unittest discover -s tests -v
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install and production build
+        working-directory: frontend
+        run: |
+          npm ci || npm install
+          npm test
+          npm run build
+
+  executor-and-validation-tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Code-executor unit tests (fake runner and container-hardening flags; no Docker daemon is used)
+        working-directory: code-executor
+        run: python -m unittest discover -s tests -v
+      - name: Evaluator-validation study tools (statistics and consent guards; synthetic inputs only)
+        working-directory: validation
+        run: python -m unittest discover -s tests -v
