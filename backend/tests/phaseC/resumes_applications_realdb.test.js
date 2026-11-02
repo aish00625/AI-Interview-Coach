@@ -2,7 +2,7 @@
 const test = require('node:test')
 const assert = require('node:assert/strict')
 const fs = require('fs'); const os = require('os'); const path = require('path')
-const { stubModule, root } = require('../phaseA/helpers')
+const { stubModule, stubMissing, root } = require('../phaseA/helpers')
 const makePool = require('../helpers/pgshim')
 const { makeDocx, makePdf } = require('../helpers/fixtures')
 
@@ -14,6 +14,9 @@ if (!db) { test('Phase C real-DB tests', { skip: 'AIC_TEST_DB not set' }, () => 
   const testPool = makePool({ db, port: process.env.AIC_TEST_PORT || 55432, host: process.env.AIC_TEST_HOST || '/tmp' })
   test.after(() => { testPool.closeAll(); fs.rmSync(dir, { recursive: true, force: true }) })
   stubModule('config/db', { pool: testPool })
+  // The PDF test below is about the parser NOT being available; make that true whatever is installed (pdf-parse is a
+  // real dependency, so CI has it). Same approach as resume_file.test.js.
+  stubMissing('pdf-parse/lib/pdf-parse.js')
   const userModel = require(path.join(root, 'models/userModel.js'))
   const orgModel = require(path.join(root, 'models/organizationModel.js'))
   const jobService = require(path.join(root, 'services/jobService.js'))

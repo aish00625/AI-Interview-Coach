@@ -95,7 +95,8 @@ class Session {
   close() { this.closed = true; try { this.child.stdin.end() } catch { /* ignore */ } }
 }
 
-function makePool({ db, port = 55432, host = '/tmp' }) {
+// Defaults follow AIC_TEST_HOST / AIC_TEST_PORT (as CI sets them) so a test that passes only { db } reaches the same server.
+function makePool({ db, port = process.env.AIC_TEST_PORT || 55432, host = process.env.AIC_TEST_HOST || '/tmp' }) {
   const opts = { db, port, host }
   const sessions = []
   let shared = null
